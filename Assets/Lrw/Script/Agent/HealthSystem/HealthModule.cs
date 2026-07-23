@@ -64,10 +64,10 @@ namespace Lrw.Script.Agent.HealthSystem
         private void HealthChange(float newHealth)
         { 
             float prevHealth = CurrentHealth;
-            CurrentHealth = Mathf.Clamp(newHealth,0,MaxHealth);
+            currentHealth = Mathf.Clamp(newHealth,0,MaxHealth);
             OnHealthChanged?.Invoke(CurrentHealth,prevHealth, MaxHealth);
 
-            if (prevHealth > newHealth)
+            if (prevHealth > currentHealth)
             {
                 OnTakeDamage?.Invoke();
             }

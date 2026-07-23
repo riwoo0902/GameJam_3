@@ -1,0 +1,672 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a575e3747ab246c1b4eafcf9fb22fe8f, type: 3}
+  m_Name: baked data
+  m_EditorClassIdentifier: PolyNavMesh_assembly::DevLib.PolyNavMesh.NavMeshBakeDataSo
+  <AgentData>k__BackingField: {fileID: 11400000, guid: 9861546b78b60bc49b1560a74ea2414e, type: 2}
+  polygons:
+  - id: 0
+    center: {x: 18.5, y: -13.75}
+    vertices:
+    - {x: 5.5, y: -14.5}
+    - {x: 31.5, y: -14.5}
+    - {x: 31.5, y: -13}
+    - {x: 5.5, y: -13}
+    portals:
+    - pointA: {x: 5.5, y: -13}
+      pointB: {x: 11, y: -13}
+      neighborId: 2
+    - pointA: {x: 11, y: -13}
+      pointB: {x: 20, y: -13}
+      neighborId: 3
+    - pointA: {x: 20, y: -13}
+      pointB: {x: 23, y: -13}
+      neighborId: 4
+    - pointA: {x: 23, y: -13}
+      pointB: {x: 28, y: -13}
+      neighborId: 5
+    - pointA: {x: 28, y: -13}
+      pointB: {x: 31.5, y: -13}
+      neighborId: 6
+  - id: 1
+    center: {x: -3.25, y: -12.25}
+    vertices:
+    - {x: -11.5, y: -12.5}
+    - {x: 5, y: -12.5}
+    - {x: 5, y: -12}
+    - {x: -11.5, y: -12}
+    portals:
+    - pointA: {x: 5, y: -12.5}
+      pointB: {x: 5, y: -12}
+      neighborId: 2
+    - pointA: {x: -11.5, y: -12}
+      pointB: {x: -11, y: -12}
+      neighborId: 7
+    - pointA: {x: -11, y: -12}
+      pointB: {x: -7, y: -12}
+      neighborId: 8
+    - pointA: {x: -7, y: -12}
+      pointB: {x: 4, y: -12}
+      neighborId: 9
+    - pointA: {x: 4, y: -12}
+      pointB: {x: 5, y: -12}
+      neighborId: 10
+  - id: 2
+    center: {x: 8, y: -12.5}
+    vertices:
+    - {x: 5, y: -13}
+    - {x: 11, y: -13}
+    - {x: 11, y: -12}
+    - {x: 5, y: -12}
+    portals:
+    - pointA: {x: 5.5, y: -13}
+      pointB: {x: 11, y: -13}
+      neighborId: 0
+    - pointA: {x: 5, y: -12.5}
+      pointB: {x: 5, y: -12}
+      neighborId: 1
+    - pointA: {x: 11, y: -13}
+      pointB: {x: 11, y: -12.5}
+      neighborId: 3
+    - pointA: {x: 5, y: -12}
+      pointB: {x: 10.5, y: -12}
+      neighborId: 10
+  - id: 3
+    center: {x: 15.5, y: -12.75}
+    vertices:
+    - {x: 11, y: -13}
+    - {x: 20, y: -13}
+    - {x: 20, y: -12.5}
+    - {x: 11, y: -12.5}
+    portals:
+    - pointA: {x: 11, y: -13}
+      pointB: {x: 20, y: -13}
+      neighborId: 0
+    - pointA: {x: 11, y: -13}
+      pointB: {x: 11, y: -12.5}
+      neighborId: 2
+    - pointA: {x: 20, y: -13}
+      pointB: {x: 20, y: -12.5}
+      neighborId: 4
+  - id: 4
+    center: {x: 21.5, y: -12.5}
+    vertices:
+    - {x: 20, y: -13}
+    - {x: 23, y: -13}
+    - {x: 23, y: -12}
+    - {x: 20, y: -12}
+    portals:
+    - pointA: {x: 20, y: -13}
+      pointB: {x: 23, y: -13}
+      neighborId: 0
+    - pointA: {x: 20, y: -13}
+      pointB: {x: 20, y: -12.5}
+      neighborId: 3
+    - pointA: {x: 23, y: -13}
+      pointB: {x: 23, y: -12.5}
+      neighborId: 5
+    - pointA: {x: 20.5, y: -12}
+      pointB: {x: 22.5, y: -12}
+      neighborId: 11
+  - id: 5
+    center: {x: 25.5, y: -12.75}
+    vertices:
+    - {x: 23, y: -13}
+    - {x: 28, y: -13}
+    - {x: 28, y: -12.5}
+    - {x: 23, y: -12.5}
+    portals:
+    - pointA: {x: 23, y: -13}
+      pointB: {x: 28, y: -13}
+      neighborId: 0
+    - pointA: {x: 23, y: -13}
+      pointB: {x: 23, y: -12.5}
+      neighborId: 4
+    - pointA: {x: 28, y: -13}
+      pointB: {x: 28, y: -12.5}
+      neighborId: 6
+  - id: 6
+    center: {x: 29.75, y: -12.5}
+    vertices:
+    - {x: 28, y: -13}
+    - {x: 31.5, y: -13}
+    - {x: 31.5, y: -12}
+    - {x: 28, y: -12}
+    portals:
+    - pointA: {x: 28, y: -13}
+      pointB: {x: 31.5, y: -13}
+      neighborId: 0
+    - pointA: {x: 28, y: -13}
+      pointB: {x: 28, y: -12.5}
+      neighborId: 5
+    - pointA: {x: 28.5, y: -12}
+      pointB: {x: 31.5, y: -12}
+      neighborId: 36
+  - id: 7
+    center: {x: -11.25, y: -10.75}
+    vertices:
+    - {x: -11.5, y: -12}
+    - {x: -11, y: -12}
+    - {x: -11, y: -9.5}
+    - {x: -11.5, y: -9.5}
+    portals:
+    - pointA: {x: -11.5, y: -12}
+      pointB: {x: -11, y: -12}
+      neighborId: 1
+    - pointA: {x: -11, y: -12}
+      pointB: {x: -11, y: -9.5}
+      neighborId: 8
+  - id: 8
+    center: {x: -9, y: -10.5}
+    vertices:
+    - {x: -11, y: -12}
+    - {x: -7, y: -12}
+    - {x: -7, y: -9}
+    - {x: -11, y: -9}
+    portals:
+    - pointA: {x: -11, y: -12}
+      pointB: {x: -7, y: -12}
+      neighborId: 1
+    - pointA: {x: -11, y: -12}
+      pointB: {x: -11, y: -9.5}
+      neighborId: 7
+    - pointA: {x: -7, y: -12}
+      pointB: {x: -7, y: -9.5}
+      neighborId: 9
+    - pointA: {x: -10.5, y: -9}
+      pointB: {x: -7.5, y: -9}
+      neighborId: 17
+  - id: 9
+    center: {x: -1.5, y: -10.75}
+    vertices:
+    - {x: -7, y: -12}
+    - {x: 4, y: -12}
+    - {x: 4, y: -9.5}
+    - {x: -7, y: -9.5}
+    portals:
+    - pointA: {x: -7, y: -12}
+      pointB: {x: 4, y: -12}
+      neighborId: 1
+    - pointA: {x: -7, y: -12}
+      pointB: {x: -7, y: -9.5}
+      neighborId: 8
+    - pointA: {x: 4, y: -12}
+      pointB: {x: 4, y: -9.5}
+      neighborId: 10
+  - id: 10
+    center: {x: 7.25, y: -10.5}
+    vertices:
+    - {x: 4, y: -12}
+    - {x: 10.5, y: -12}
+    - {x: 10.5, y: -9}
+    - {x: 4, y: -9}
+    portals:
+    - pointA: {x: 4, y: -12}
+      pointB: {x: 5, y: -12}
+      neighborId: 1
+    - pointA: {x: 5, y: -12}
+      pointB: {x: 10.5, y: -12}
+      neighborId: 2
+    - pointA: {x: 4, y: -12}
+      pointB: {x: 4, y: -9.5}
+      neighborId: 9
+    - pointA: {x: 4.5, y: -9}
+      pointB: {x: 10.5, y: -9}
+      neighborId: 15
+  - id: 11
+    center: {x: 21.5, y: -10.5}
+    vertices:
+    - {x: 20.5, y: -12}
+    - {x: 22.5, y: -12}
+    - {x: 22.5, y: -9}
+    - {x: 20.5, y: -9}
+    portals:
+    - pointA: {x: 20.5, y: -12}
+      pointB: {x: 22.5, y: -12}
+      neighborId: 4
+    - pointA: {x: 20.5, y: -9}
+      pointB: {x: 22.5, y: -9}
+      neighborId: 14
+  - id: 12
+    center: {x: 15.75, y: -7.25}
+    vertices:
+    - {x: 14.5, y: -8.5}
+    - {x: 17, y: -8.5}
+    - {x: 17, y: -6}
+    - {x: 14.5, y: -6}
+    portals:
+    - pointA: {x: 17, y: -8.5}
+      pointB: {x: 17, y: -6.5}
+      neighborId: 13
+    - pointA: {x: 14.5, y: -6}
+      pointB: {x: 16.5, y: -6}
+      neighborId: 16
+  - id: 13
+    center: {x: 18.5, y: -7.5}
+    vertices:
+    - {x: 17, y: -8.5}
+    - {x: 20, y: -8.5}
+    - {x: 20, y: -6.5}
+    - {x: 17, y: -6.5}
+    portals:
+    - pointA: {x: 17, y: -8.5}
+      pointB: {x: 17, y: -6.5}
+      neighborId: 12
+    - pointA: {x: 20, y: -8.5}
+      pointB: {x: 20, y: -6.5}
+      neighborId: 14
+  - id: 14
+    center: {x: 21.25, y: -7.5}
+    vertices:
+    - {x: 20, y: -9}
+    - {x: 22.5, y: -9}
+    - {x: 22.5, y: -6}
+    - {x: 20, y: -6}
+    portals:
+    - pointA: {x: 20.5, y: -9}
+      pointB: {x: 22.5, y: -9}
+      neighborId: 11
+    - pointA: {x: 20, y: -8.5}
+      pointB: {x: 20, y: -6.5}
+      neighborId: 13
+    - pointA: {x: 20.5, y: -6}
+      pointB: {x: 22.5, y: -6}
+      neighborId: 29
+  - id: 15
+    center: {x: 7.5, y: -5}
+    vertices:
+    - {x: 4.5, y: -9}
+    - {x: 10.5, y: -9}
+    - {x: 10.5, y: -1}
+    - {x: 4.5, y: -1}
+    portals:
+    - pointA: {x: 4.5, y: -9}
+      pointB: {x: 10.5, y: -9}
+      neighborId: 10
+    - pointA: {x: 4.5, y: -1}
+      pointB: {x: 10.5, y: -1}
+      neighborId: 19
+  - id: 16
+    center: {x: 15.5, y: -3.5}
+    vertices:
+    - {x: 14.5, y: -6}
+    - {x: 16.5, y: -6}
+    - {x: 16.5, y: -1}
+    - {x: 14.5, y: -1}
+    portals:
+    - pointA: {x: 14.5, y: -6}
+      pointB: {x: 16.5, y: -6}
+      neighborId: 12
+    - pointA: {x: 14.5, y: -1}
+      pointB: {x: 16.5, y: -1}
+      neighborId: 21
+  - id: 17
+    center: {x: -9, y: -4.5}
+    vertices:
+    - {x: -10.5, y: -9}
+    - {x: -7.5, y: -9}
+    - {x: -7.5, y: 0}
+    - {x: -10.5, y: 0}
+    portals:
+    - pointA: {x: -10.5, y: -9}
+      pointB: {x: -7.5, y: -9}
+      neighborId: 8
+    - pointA: {x: -10.5, y: 0}
+      pointB: {x: -7.5, y: 0}
+      neighborId: 22
+  - id: 18
+    center: {x: 0.75, y: -0.25}
+    vertices:
+    - {x: -2.5, y: -0.5}
+    - {x: 4, y: -0.5}
+    - {x: 4, y: 0}
+    - {x: -2.5, y: 0}
+    portals:
+    - pointA: {x: 4, y: -0.5}
+      pointB: {x: 4, y: 0}
+      neighborId: 19
+    - pointA: {x: -2.5, y: 0}
+      pointB: {x: 4, y: 0}
+      neighborId: 24
+  - id: 19
+    center: {x: 7.5, y: -0.5}
+    vertices:
+    - {x: 4, y: -1}
+    - {x: 11, y: -1}
+    - {x: 11, y: 0}
+    - {x: 4, y: 0}
+    portals:
+    - pointA: {x: 4.5, y: -1}
+      pointB: {x: 10.5, y: -1}
+      neighborId: 15
+    - pointA: {x: 4, y: -0.5}
+      pointB: {x: 4, y: 0}
+      neighborId: 18
+    - pointA: {x: 11, y: -0.5}
+      pointB: {x: 11, y: 0}
+      neighborId: 20
+    - pointA: {x: 4, y: 0}
+      pointB: {x: 11, y: 0}
+      neighborId: 24
+  - id: 20
+    center: {x: 12.5, y: -0.25}
+    vertices:
+    - {x: 11, y: -0.5}
+    - {x: 14, y: -0.5}
+    - {x: 14, y: 0}
+    - {x: 11, y: 0}
+    portals:
+    - pointA: {x: 11, y: -0.5}
+      pointB: {x: 11, y: 0}
+      neighborId: 19
+    - pointA: {x: 14, y: -0.5}
+      pointB: {x: 14, y: 0}
+      neighborId: 21
+    - pointA: {x: 11, y: 0}
+      pointB: {x: 14, y: 0}
+      neighborId: 24
+  - id: 21
+    center: {x: 15.25, y: -0.5}
+    vertices:
+    - {x: 14, y: -1}
+    - {x: 16.5, y: -1}
+    - {x: 16.5, y: 0}
+    - {x: 14, y: 0}
+    portals:
+    - pointA: {x: 14.5, y: -1}
+      pointB: {x: 16.5, y: -1}
+      neighborId: 16
+    - pointA: {x: 14, y: -0.5}
+      pointB: {x: 14, y: 0}
+      neighborId: 20
+    - pointA: {x: 14, y: 0}
+      pointB: {x: 16.5, y: 0}
+      neighborId: 24
+  - id: 22
+    center: {x: -8.75, y: 1.5}
+    vertices:
+    - {x: -10.5, y: 0}
+    - {x: -7, y: 0}
+    - {x: -7, y: 3}
+    - {x: -10.5, y: 3}
+    portals:
+    - pointA: {x: -10.5, y: 0}
+      pointB: {x: -7.5, y: 0}
+      neighborId: 17
+    - pointA: {x: -7, y: 0.5}
+      pointB: {x: -7, y: 2.5}
+      neighborId: 23
+    - pointA: {x: -10.5, y: 3}
+      pointB: {x: -7.5, y: 3}
+      neighborId: 35
+  - id: 23
+    center: {x: -5, y: 1.5}
+    vertices:
+    - {x: -7, y: 0.5}
+    - {x: -3, y: 0.5}
+    - {x: -3, y: 2.5}
+    - {x: -7, y: 2.5}
+    portals:
+    - pointA: {x: -7, y: 0.5}
+      pointB: {x: -7, y: 2.5}
+      neighborId: 22
+    - pointA: {x: -3, y: 0.5}
+      pointB: {x: -3, y: 2.5}
+      neighborId: 24
+  - id: 24
+    center: {x: 6.75, y: 1.5}
+    vertices:
+    - {x: -3, y: 0}
+    - {x: 16.5, y: 0}
+    - {x: 16.5, y: 3}
+    - {x: -3, y: 3}
+    portals:
+    - pointA: {x: -2.5, y: 0}
+      pointB: {x: 4, y: 0}
+      neighborId: 18
+    - pointA: {x: 4, y: 0}
+      pointB: {x: 11, y: 0}
+      neighborId: 19
+    - pointA: {x: 11, y: 0}
+      pointB: {x: 14, y: 0}
+      neighborId: 20
+    - pointA: {x: 14, y: 0}
+      pointB: {x: 16.5, y: 0}
+      neighborId: 21
+    - pointA: {x: -3, y: 0.5}
+      pointB: {x: -3, y: 2.5}
+      neighborId: 23
+    - pointA: {x: -2.5, y: 3}
+      pointB: {x: 6, y: 3}
+      neighborId: 25
+    - pointA: {x: 6, y: 3}
+      pointB: {x: 9, y: 3}
+      neighborId: 26
+    - pointA: {x: 9, y: 3}
+      pointB: {x: 16.5, y: 3}
+      neighborId: 27
+  - id: 25
+    center: {x: 1.75, y: 3.25}
+    vertices:
+    - {x: -2.5, y: 3}
+    - {x: 6, y: 3}
+    - {x: 6, y: 3.5}
+    - {x: -2.5, y: 3.5}
+    portals:
+    - pointA: {x: -2.5, y: 3}
+      pointB: {x: 6, y: 3}
+      neighborId: 24
+    - pointA: {x: 6, y: 3}
+      pointB: {x: 6, y: 3.5}
+      neighborId: 26
+  - id: 26
+    center: {x: 7.5, y: 3.5}
+    vertices:
+    - {x: 6, y: 3}
+    - {x: 9, y: 3}
+    - {x: 9, y: 4}
+    - {x: 6, y: 4}
+    portals:
+    - pointA: {x: 6, y: 3}
+      pointB: {x: 9, y: 3}
+      neighborId: 24
+    - pointA: {x: 6, y: 3}
+      pointB: {x: 6, y: 3.5}
+      neighborId: 25
+    - pointA: {x: 9, y: 3}
+      pointB: {x: 9, y: 3.5}
+      neighborId: 27
+    - pointA: {x: 6.5, y: 4}
+      pointB: {x: 8.5, y: 4}
+      neighborId: 28
+  - id: 27
+    center: {x: 12.75, y: 3.25}
+    vertices:
+    - {x: 9, y: 3}
+    - {x: 16.5, y: 3}
+    - {x: 16.5, y: 3.5}
+    - {x: 9, y: 3.5}
+    portals:
+    - pointA: {x: 9, y: 3}
+      pointB: {x: 16.5, y: 3}
+      neighborId: 24
+    - pointA: {x: 9, y: 3}
+      pointB: {x: 9, y: 3.5}
+      neighborId: 26
+  - id: 28
+    center: {x: 7.5, y: 8}
+    vertices:
+    - {x: 6.5, y: 4}
+    - {x: 8.5, y: 4}
+    - {x: 8.5, y: 12}
+    - {x: 6.5, y: 12}
+    portals:
+    - pointA: {x: 6.5, y: 4}
+      pointB: {x: 8.5, y: 4}
+      neighborId: 26
+    - pointA: {x: 6.5, y: 12}
+      pointB: {x: 8.5, y: 12}
+      neighborId: 30
+  - id: 29
+    center: {x: 21.5, y: 3}
+    vertices:
+    - {x: 20.5, y: -6}
+    - {x: 22.5, y: -6}
+    - {x: 22.5, y: 12}
+    - {x: 20.5, y: 12}
+    portals:
+    - pointA: {x: 20.5, y: -6}
+      pointB: {x: 22.5, y: -6}
+      neighborId: 14
+    - pointA: {x: 20.5, y: 12}
+      pointB: {x: 22.5, y: 12}
+      neighborId: 32
+  - id: 30
+    center: {x: 7.75, y: 14}
+    vertices:
+    - {x: 6.5, y: 12}
+    - {x: 9, y: 12}
+    - {x: 9, y: 16}
+    - {x: 6.5, y: 16}
+    portals:
+    - pointA: {x: 6.5, y: 12}
+      pointB: {x: 8.5, y: 12}
+      neighborId: 28
+    - pointA: {x: 9, y: 12.5}
+      pointB: {x: 9, y: 15.5}
+      neighborId: 31
+    - pointA: {x: 6.5, y: 16}
+      pointB: {x: 8.5, y: 16}
+      neighborId: 34
+  - id: 31
+    center: {x: 14.5, y: 14}
+    vertices:
+    - {x: 9, y: 12.5}
+    - {x: 20, y: 12.5}
+    - {x: 20, y: 15.5}
+    - {x: 9, y: 15.5}
+    portals:
+    - pointA: {x: 9, y: 12.5}
+      pointB: {x: 9, y: 15.5}
+      neighborId: 30
+    - pointA: {x: 20, y: 12.5}
+      pointB: {x: 20, y: 15.5}
+      neighborId: 32
+  - id: 32
+    center: {x: 21.5, y: 13.75}
+    vertices:
+    - {x: 20, y: 12}
+    - {x: 23, y: 12}
+    - {x: 23, y: 15.5}
+    - {x: 20, y: 15.5}
+    portals:
+    - pointA: {x: 20.5, y: 12}
+      pointB: {x: 22.5, y: 12}
+      neighborId: 29
+    - pointA: {x: 20, y: 12.5}
+      pointB: {x: 20, y: 15.5}
+      neighborId: 31
+    - pointA: {x: 23, y: 12.5}
+      pointB: {x: 23, y: 15.5}
+      neighborId: 33
+  - id: 33
+    center: {x: 23.25, y: 14}
+    vertices:
+    - {x: 23, y: 12.5}
+    - {x: 23.5, y: 12.5}
+    - {x: 23.5, y: 15.5}
+    - {x: 23, y: 15.5}
+    portals:
+    - pointA: {x: 23, y: 12.5}
+      pointB: {x: 23, y: 15.5}
+      neighborId: 32
+  - id: 34
+    center: {x: 7.5, y: 16.25}
+    vertices:
+    - {x: 6.5, y: 16}
+    - {x: 8.5, y: 16}
+    - {x: 8.5, y: 16.5}
+    - {x: 6.5, y: 16.5}
+    portals:
+    - pointA: {x: 6.5, y: 16}
+      pointB: {x: 8.5, y: 16}
+      neighborId: 30
+  - id: 35
+    center: {x: -9, y: 12.5}
+    vertices:
+    - {x: -10.5, y: 3}
+    - {x: -7.5, y: 3}
+    - {x: -7.5, y: 22}
+    - {x: -10.5, y: 22}
+    portals:
+    - pointA: {x: -10.5, y: 3}
+      pointB: {x: -7.5, y: 3}
+      neighborId: 22
+    - pointA: {x: -10.5, y: 22}
+      pointB: {x: -7.5, y: 22}
+      neighborId: 37
+  - id: 36
+    center: {x: 30, y: 5}
+    vertices:
+    - {x: 28.5, y: -12}
+    - {x: 31.5, y: -12}
+    - {x: 31.5, y: 22}
+    - {x: 28.5, y: 22}
+    portals:
+    - pointA: {x: 28.5, y: -12}
+      pointB: {x: 31.5, y: -12}
+      neighborId: 6
+    - pointA: {x: 28.5, y: 22}
+      pointB: {x: 31.5, y: 22}
+      neighborId: 39
+  - id: 37
+    center: {x: -8.75, y: 25.25}
+    vertices:
+    - {x: -10.5, y: 22}
+    - {x: -7, y: 22}
+    - {x: -7, y: 28.5}
+    - {x: -10.5, y: 28.5}
+    portals:
+    - pointA: {x: -10.5, y: 22}
+      pointB: {x: -7.5, y: 22}
+      neighborId: 35
+    - pointA: {x: -7, y: 22.5}
+      pointB: {x: -7, y: 28.5}
+      neighborId: 38
+  - id: 38
+    center: {x: 10.5, y: 25.5}
+    vertices:
+    - {x: -7, y: 22.5}
+    - {x: 28, y: 22.5}
+    - {x: 28, y: 28.5}
+    - {x: -7, y: 28.5}
+    portals:
+    - pointA: {x: -7, y: 22.5}
+      pointB: {x: -7, y: 28.5}
+      neighborId: 37
+    - pointA: {x: 28, y: 22.5}
+      pointB: {x: 28, y: 28.5}
+      neighborId: 39
+  - id: 39
+    center: {x: 29.75, y: 25.25}
+    vertices:
+    - {x: 28, y: 22}
+    - {x: 31.5, y: 22}
+    - {x: 31.5, y: 28.5}
+    - {x: 28, y: 28.5}
+    portals:
+    - pointA: {x: 28.5, y: 22}
+      pointB: {x: 31.5, y: 22}
+      neighborId: 36
+    - pointA: {x: 28, y: 22.5}
+      pointB: {x: 28, y: 28.5}
+      neighborId: 38
