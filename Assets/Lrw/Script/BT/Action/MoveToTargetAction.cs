@@ -1,33 +1,27 @@
 using System;
-using JJM.Scripts.Player;
 using Lrw.Script.Enemy;
 using Unity.Behavior;
 using Unity.Properties;
 using UnityEngine;
-using Action = Unity.Behavior.Action;
 
-namespace Lrw.Script.BT
+namespace Lrw.Script.BT.Action
 {
     [Serializable, GeneratePropertyBag]
     [NodeDescription(name: "MoveToTarget", story: "[Enemy] move to [Target]", category: "Enemy", id: "2fe60f798015a16907982ca73ffbff1e")]
-    public partial class MoveToTargetAction : Action
+    public partial class MoveToTargetAction : Unity.Behavior.Action
     {
         [SerializeReference] public BlackboardVariable<AbstractEnemy> Enemy;
-        [SerializeReference] public BlackboardVariable<Player> Target;
+        [SerializeReference] public BlackboardVariable<Transform> Target;
 
         protected override Status OnStart()
         {
-            return Status.Running;
-        }
+            if (Enemy.Value == null || Target.Value == null || Enemy.Value.MoveModule == null) return Status.Failure;
 
-        protected override Status OnUpdate()
-        {
+            Enemy.Value.MoveModule.SetDestination(Target.Value.transform.position);
+            
             return Status.Success;
         }
-
-        protected override void OnEnd()
-        {
-        }
+        
     }
 }
 

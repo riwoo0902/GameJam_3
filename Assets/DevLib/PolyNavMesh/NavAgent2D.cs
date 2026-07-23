@@ -54,6 +54,8 @@ namespace DevLib.PolyNavMesh
             }
         }
 
+        public Vector2 MoveDir { get; set; }
+
         public void InvalidatePath()
         {
             if(HasPath) IsPathStale = true; 
@@ -111,6 +113,7 @@ namespace DevLib.PolyNavMesh
             
             Vector2 target = _waypoints[_wayPointIndex];
             Vector2 next = Vector2.MoveTowards(current, target, step);
+            MoveDir = (target - current).normalized;
             transform.position = next;
 
             if ((next - target).sqrMagnitude < 0.001f)

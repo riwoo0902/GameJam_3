@@ -1,6 +1,9 @@
+using System;
+using DevLib.AnimatorSystem;
 using DevLib.ModuleSystem;
 using DevLib.PolyNavMesh;
 using Lrw.Script.Agent.StatSystem;
+using Publics.Agent;
 using UnityEngine;
 
 namespace Lrw.Script.Enemy.MoveSystem
@@ -9,9 +12,13 @@ namespace Lrw.Script.Enemy.MoveSystem
     {
         [SerializeField] private StatDataSo moveSpeedStat;
 
-        private INavAgent2D _navAgent;
+        [SerializeField] private HashDataSO velocityX;
+        [SerializeField] private HashDataSO velocityY;
+        
+        public INavAgent2D NavAgent { get; private set; }
         
         private IStatModule _statModule;
+        private IRenderer _render;
         
         private Stat _moveSpeedStat;
         
@@ -20,8 +27,10 @@ namespace Lrw.Script.Enemy.MoveSystem
             base.Initialize(owner);
             _statModule = owner.GetModule<IStatModule>();
             Debug.Assert(_statModule != null,"StatModule is not found"); 
-            _navAgent = owner.GetModule<INavAgent2D>();
-            Debug.Assert(_navAgent != null, "NavAgent is not found");
+            NavAgent = owner.GetComponent<INavAgent2D>();
+            Debug.Assert(NavAgent != null, "NavAgent is not found");
+            _render = owner.GetModule<IRenderer>();
+            Debug.Assert(_render != null, "Renderer is not found");
         }
 
         public void AfterInit()
@@ -29,7 +38,7 @@ namespace Lrw.Script.Enemy.MoveSystem
             _moveSpeedStat = _statModule.GetStat(moveSpeedStat);
             Debug.Assert(_moveSpeedStat != null,"MoveSpeedStat is not found");
             
-            _navAgent.Speed = _moveSpeedStat.Value;
+            NavAgent.Speed = _moveSpeedStat.Value;
             _moveSpeedStat.OnValueChanged += MoveSpeedStatOnOnValueChanged;
         }
 
@@ -37,15 +46,22 @@ namespace Lrw.Script.Enemy.MoveSystem
         {
             _moveSpeedStat.OnValueChanged -= MoveSpeedStatOnOnValueChanged;
         }
+        
+        private void LateUpdate()
+        {
+            Vector2 dir = NavAgent.MoveDir.normalized;
+            _render.SetFloat(velocityX.HashValue,dir.x);
+            _render.SetFloat(velocityY.HashValue,dir.x);
+        }
 
         private void MoveSpeedStatOnOnValueChanged(float currentValue, float prevValue)
         {
-            _navAgent.Speed = currentValue;
+            NavAgent.Speed = currentValue;
         }
 
         public void SetDestination(Vector2 targetPos)
         {
-            _navAgent.SetDestination(targetPos);
+            NavAgent.SetDestination(targetPos);
         }
         
         
