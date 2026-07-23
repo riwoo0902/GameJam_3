@@ -10,15 +10,18 @@ namespace Lrw.Script.StatSystem
         [SerializeField] private StatOverride[] statOverride;
 
         private Dictionary<StatDataSo,Stat> _stats = new();
-        
+
         public override void Initialize(ModuleOwner owner)
         {
             base.Initialize(owner);
-            
             _stats = statOverride.ToDictionary(x => x.statSo,x => new Stat(x.statSo, x.value));
         }
 
-        public Stat GetStat(StatDataSo statSo) => _stats.GetValueOrDefault(statSo);
+        public Stat GetStat(StatDataSo statSo)
+        {
+            if(statSo == null) return null;
+            return _stats.GetValueOrDefault(statSo);
+        }
         
         private void OnValidate()
         {
