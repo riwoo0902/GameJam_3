@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Lrw.Script.Enemy
 {
-    public abstract class AbstractEnemy : ModuleOwner
+    public class Enemy : ModuleOwner
     {
         private readonly string _taget = "Target";
         private readonly string _enemy = "Enemy";
@@ -13,6 +13,8 @@ namespace Lrw.Script.Enemy
         public IEnemyMoveModule MoveModule { get; private set; }
         public ISkillModule SkillModule { get; private set; }
         private BehaviorGraphAgent _behaviorGraphAgent;
+        
+        
         
         protected override void InitializeModules()
         {

@@ -9,29 +9,36 @@ namespace Lrw.Script.Enemy
     {
         [SerializeField] private StatDataSo statDataSo;
         [field: SerializeField] public float AttackDistance { get; private set; } = 0.5f;
+        public bool SkillEnd { get; private set; }
 
         private IStatModule _statModule;
-        private IEnemyMoveModule _enemyMoveModule;
+        protected IEnemyMoveModule EnemyMoveModule { get; private set; }
 
         protected Stat Stat { get; private set; }
         
         public override void Initialize(ModuleOwner owner)
         {
             base.Initialize(owner);
-            _enemyMoveModule = owner.GetModule<IEnemyMoveModule>();
+            EnemyMoveModule = owner.GetModule<IEnemyMoveModule>();
             _statModule = owner.GetModule<IStatModule>();
         }
         
-        public void AfterInit()
+        public virtual void AfterInit()
         {
-            _enemyMoveModule.NavAgent.StoppingDistance = Mathf.Max(AttackDistance - 0.1f,0f);
+            EnemyMoveModule.NavAgent.StoppingDistance = Mathf.Max(AttackDistance - 0.1f,0f);
             Stat = _statModule.GetStat(statDataSo);
         }
 
         public abstract bool CanUse(Transform target = null);
-        
-        public abstract void Use(Transform target = null);
 
+        public void SkillUse(Transform target = null)
+        {
+            SkillEnd = false;
+            Use(target);
+        }
+        protected abstract void Use(Transform target = null);
+
+        protected void SetSkillEnd() => SkillEnd = true;  
 
         
     }

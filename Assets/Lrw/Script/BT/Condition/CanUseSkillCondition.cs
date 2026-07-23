@@ -9,7 +9,7 @@ namespace Lrw.Script.BT.Condition
     [Condition(name: "CanUseSkill", story: "[Enemy] CanUse Skill to [Target]", category: "Conditions", id: "54a5d2bcbdaa77cdfe5b55dbef12a87f")]
     public partial class CanUseSkillCondition : Unity.Behavior.Condition
     {
-        [SerializeReference] public BlackboardVariable<AbstractEnemy> Enemy;
+        [SerializeReference] public BlackboardVariable<Enemy.Enemy> Enemy;
         [SerializeReference] public BlackboardVariable<Transform> Target;
 
         public override bool IsTrue()

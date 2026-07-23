@@ -18,10 +18,11 @@ namespace Lrw.Script.Enemy.EnemySkills
             return _coolTime <= 0f;
         }
 
-        public override void Use(Transform target = null)
+        protected override void Use(Transform target = null)
         {
             _coolTime = 1;
             damageCaster.Cast(Stat.Value);
+            SetSkillEnd();
         }
         
     }

@@ -48,5 +48,11 @@ namespace DevLib.ModuleSystem
             return default;
         }
 
+        public bool TryGetModule<T>(out T module)
+        {
+            module = GetModule<T>();
+            return module != null;
+        }
+
     }
 }

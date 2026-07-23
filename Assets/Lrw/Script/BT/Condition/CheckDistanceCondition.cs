@@ -9,7 +9,7 @@ namespace Lrw.Script.BT.Condition
     [Condition(name: "CheckDistance", story: "[Enemy] to [Target] distance [Operator]", category: "Conditions", id: "1736442f762264e95d235f6218ad2655")]
     public partial class CheckDistanceCondition : Unity.Behavior.Condition
     {
-        [SerializeReference] public BlackboardVariable<AbstractEnemy> Enemy;
+        [SerializeReference] public BlackboardVariable<Enemy.Enemy> Enemy;
         [SerializeReference] public BlackboardVariable<Transform> Target;
         [Comparison(comparisonType: ComparisonType.All)]
         [SerializeReference] public BlackboardVariable<ConditionOperator> Operator;
