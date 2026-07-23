@@ -11453,12 +11453,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 619305168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69d0de4b9ed069841826722a68431785, type: 3}
+  m_Script: {fileID: 11500000, guid: 4402cca1f97c47d8a0c97372263b5144, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: DevLib.PolyNavMesh::DevLib.PolyNavMesh.NavMeshBaker
+  m_EditorClassIdentifier: PolyNavMesh_assembly::DevLib.PolyNavMesh.NavMeshBaker
   groundMap: {fileID: 455253734}
   obstacleMap: {fileID: 74404787}
-  navMeshData: {fileID: 11400000, guid: 51f2712d003e56f4784e3c7a5b8fe894, type: 2}
+  bakeData: {fileID: 11400000, guid: f0f11fab0739a2e4a8de885f86d359e7, type: 2}
   drawGizmos: 1
   polygonColor: {r: 0.2, g: 0.8, b: 0.2, a: 0.4}
   portalColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -11495,6 +11495,7 @@ Transform:
   m_Children:
   - {fileID: 663963320}
   - {fileID: 1258348300}
+  - {fileID: 1131447642}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &659671089
@@ -11506,10 +11507,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 659671087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d156f9502683449a1753a0bbad5f39, type: 3}
+  m_Script: {fileID: 11500000, guid: c4b5a3f11bed4376a547a33880b7f12c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: DevLib.PolyNavMesh::DevLib.PolyNavMesh.PolyNavAgent
-  navMeshData: {fileID: 11400000, guid: 51f2712d003e56f4784e3c7a5b8fe894, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Enemy.Enemy
 --- !u!1 &663963319
 GameObject:
   m_ObjectHideFlags: 0
@@ -11554,8 +11554,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46fedcb37c348fda3b872df5802f9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Agent.HealthSystem.HealthModule
-  maxHealthStatData: {fileID: 0}
+  maxHealthStatData: {fileID: 11400000, guid: d207959515f7bfc49b6647162acaacec, type: 2}
   currentHealth: 0
+--- !u!1 &1131447641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1131447642}
+  - component: {fileID: 1131447644}
+  - component: {fileID: 1131447643}
+  m_Layer: 0
+  m_Name: Nav
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1131447642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131447641}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 659671088}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1131447643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131447641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6bb3e1afad4b42a252c425b48dbcd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Enemy.MoveSystem.EnemyMoveModule
+  moveSpeedStat: {fileID: 11400000, guid: 736abd4cb5966664dac5981d57794a75, type: 2}
+--- !u!114 &1131447644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131447641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b7ac91852f409e8be3b1ee86eacb27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PolyNavMesh_assembly::DevLib.PolyNavMesh.NavAgent2D
+  navMeshData: {fileID: 0}
+  speed: 0
+  stoppingDistance: 0.3
 --- !u!1 &1258348299
 GameObject:
   m_ObjectHideFlags: 0
@@ -11600,7 +11661,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2deb27cee94b0a9506ff86ce536f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.StatSystem.StatModule
-  statOverride: []
+  statOverride:
+  - statSo: {fileID: 0}
+    value: 0
+  - statSo: {fileID: 0}
+    value: 0
 --- !u!1 &2135776108
 GameObject:
   m_ObjectHideFlags: 0

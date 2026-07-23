@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 578173287829465db4fafe5f6dc845be, type: 3}
-  m_Name: MaxHealth
+  m_Name: MoveSpeed Stat
   m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.StatSystem.StatDataSo
   <StatIcon>k__BackingField: {fileID: 0}
-  <MinValue>k__BackingField: 0
-  <MaxValue>k__BackingField: 0
+  <StatName>k__BackingField: MoveSpeed
+  <MinValue>k__BackingField: 1
+  <MaxValue>k__BackingField: 30

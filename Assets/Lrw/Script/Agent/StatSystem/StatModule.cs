@@ -14,7 +14,8 @@ namespace Lrw.Script.Agent.StatSystem
         public override void Initialize(ModuleOwner owner)
         {
             base.Initialize(owner);
-            _stats = statOverride.ToDictionary(x => x.statSo,x => new Stat(x.statSo, x.value));
+            _stats = statOverride.Where(x => x != null && x.statSo != null)
+                .ToDictionary(x => x.statSo,x => new Stat(x.statSo, x.value));
         }
 
         public Stat GetStat(StatDataSo statSo)
@@ -30,7 +31,7 @@ namespace Lrw.Script.Agent.StatSystem
             HashSet<StatDataSo> hash = new();
             foreach (StatOverride statData in statOverride)
             {
-                if(statData == null) continue;
+                if (statData == null || statData.statSo == null) continue;
                 if (hash.Contains(statData.statSo))
                 {
                     Debug.LogError("동일한 스텟이 들어가 있습니다.");
