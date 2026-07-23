@@ -20,7 +20,7 @@ namespace Lrw.Script.Agent.StatSystem
         
         public event ValueChangeHandler OnValueChanged;
         
-        public Stat(StatDataSo dataSo, int baseValue)
+        public Stat(StatDataSo dataSo, float baseValue)
         {
             if(dataSo == null) throw new Exception("StatSo cannot be null");
             StatDataSo = dataSo;
