@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using DevLib.ModuleSystem;
+﻿using DevLib.ObjectPool.Runtime;
 using Lrw.Script.CombatSystem;
-using Lrw.Script.Enemy.MoveSystem;
+using Lrw.Script.Enemy.Bullet;
 using UnityEngine;
 
 namespace Lrw.Script.Enemy.EnemySkills
@@ -9,7 +8,11 @@ namespace Lrw.Script.Enemy.EnemySkills
     public class GGHSkill : AbstractSkillModule
     {
         private float _coolTime;
-        [SerializeField] private DamageCaster damageCaster;
+        [SerializeField] private PoolManagerSO poolManagerSo;
+        [SerializeField] private PoolItemSO poolItemSo;  
+        
+        [SerializeField] private float bulletSpeed;
+        
         
         private void Update()
         {
@@ -25,10 +28,12 @@ namespace Lrw.Script.Enemy.EnemySkills
         protected override void Use(Transform target = null)
         {
             _coolTime = 5f;
-            
-            
-            
-            
+            EnemyBullet bullet = poolManagerSo.Pop<EnemyBullet>(poolItemSo);
+            bullet.GameObject.SetActive(true);
+            bullet.transform.position = transform.position;
+            Vector2 vec = (target.position - transform.position).normalized * bulletSpeed; 
+            bullet.Init(vec,Stat.Value);
+            SetSkillEnd();
         }
 
         
