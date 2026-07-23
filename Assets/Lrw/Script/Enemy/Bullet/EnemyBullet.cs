@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using DevLib.ObjectPool.Runtime;
-using JJM.Scripts.Player;
+using JJM.Scripts.Players;
 using Lrw.Script.Agent.HealthSystem;
 using UnityEngine;
 
