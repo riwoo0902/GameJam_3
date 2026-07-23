@@ -56,7 +56,7 @@ namespace Lrw.Script.Agent.HealthSystem
             CurrentHealth = Mathf.Clamp(CurrentHealth + delta,1f,MaxHealth);
         }
 
-        private void TakeDamage(float damage)
+        public void TakeDamage(float damage)
         {
             CurrentHealth -= damage;
         }
