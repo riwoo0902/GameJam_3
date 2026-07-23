@@ -1,5 +1,5 @@
 using System;
-using JJM.Scripts.Player;
+using JJM.Scripts.Players;
 using Lrw.Script.Enemy;
 using Unity.Behavior;
 using Unity.Properties;

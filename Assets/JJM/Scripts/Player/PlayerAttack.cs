@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using DevLib.ModuleSystem;
 using DevLib.ObjectPool.Runtime;
+using JJM.Scripts.Players.Stats;
 using Lrw.Script.Agent.StatSystem;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-namespace JJM.Scripts.Player
+namespace JJM.Scripts.Players
 {
     public class PlayerAttack : Module, IAfterInitModule
     {
@@ -18,12 +20,15 @@ namespace JJM.Scripts.Player
         [SerializeField] private StatDataSo projectiveDamageDataSo;
         [SerializeField] private StatDataSo attackSpeedDataSo;
 
+        [Header("Unity Event")]
+        public UnityEvent OnAttack;
+        
         private Stat _speedStat;
-        private float ProjectiveSpeed => _speedStat.Value;        
+        public float ProjectiveSpeed => _speedStat.Value;        
         private Stat _damageStat;
-        private float ProjectiveDamage => _damageStat.Value;        
+        public float ProjectiveDamage => _damageStat.Value;        
         private Stat _attackSpeedStat;
-        private float AttackSpeedStat => _attackSpeedStat.Value;
+        public float AttackSpeedStat => _attackSpeedStat.Value;
         
         
         private bool _canFire = true;
@@ -87,9 +92,11 @@ namespace JJM.Scripts.Player
                 _canFire = true;
                 return;
             }
+            
+            OnAttack?.Invoke();
 
-            projectileInstance.Speed =  ProjectiveSpeed;
-            projectileInstance.Damage = ProjectiveDamage;
+            projectileInstance.Speed =  ProjectiveSpeed * PlayerStatManager.Instance.PSPD;
+            projectileInstance.Damage = ProjectiveDamage * PlayerStatManager.Instance.ATK;
 
             float angle = GetFourDirectionAngle(direction);
 
@@ -103,11 +110,11 @@ namespace JJM.Scripts.Player
 
         private IEnumerator FireCoolDown()
         {
-            yield return new WaitForSeconds(AttackSpeedStat);
+            yield return new WaitForSeconds(AttackSpeedStat / PlayerStatManager.Instance.ATS);
             _canFire = true;
         }
 
-        private static float GetFourDirectionAngle(Vector2 direction)
+        public static float GetFourDirectionAngle(Vector2 direction)
         {
             if (Mathf.Abs(direction.x) >= Mathf.Abs(direction.y))
             {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace JJM.Scripts.Player
+namespace JJM.Scripts.Players
 {
     public interface IPlayerRotation
     {

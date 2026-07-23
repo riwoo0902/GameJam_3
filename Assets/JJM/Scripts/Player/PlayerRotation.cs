@@ -4,7 +4,7 @@ using Publics.Agent;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace JJM.Scripts.Player
+namespace JJM.Scripts.Players
 {
     public class PlayerRotation : Module, IPlayerRotation
     {
