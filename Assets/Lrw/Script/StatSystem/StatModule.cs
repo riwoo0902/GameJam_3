@@ -25,8 +25,9 @@ namespace Lrw.Script.StatSystem
         
         private void OnValidate()
         {
+            if (statOverride == null) return;
+            
             HashSet<StatDataSo> hash = new();
-
             foreach (StatOverride statData in statOverride)
             {
                 if(statData == null) continue;
