@@ -1,5 +1,5 @@
 using DevLib.ModuleSystem;
-using Lrw.Script.StatSystem;
+using Lrw.Script.Agent.StatSystem;
 using UnityEngine;
 
 namespace Lrw.Script.Agent.HealthSystem

@@ -1,5 +1,6 @@
 using DevLib.ModuleSystem;
-using Lrw.Script.StatSystem;
+using DevLib.PolyNavMesh;
+using Lrw.Script.Agent.StatSystem;
 using UnityEngine;
 
 namespace Lrw.Script.Enemy.MoveSystem
@@ -7,9 +8,11 @@ namespace Lrw.Script.Enemy.MoveSystem
     public class EnemyMoveModule : Module,IAfterInitModule
     {
         
-        [SerializeField] private StatDataSo statDataSo;
+        [SerializeField] private StatDataSo moveSpeedStat;
 
-        private IStatModule statModule;
+        private IPolyNavAgent _navAgent;
+        
+        private IStatModule _statModule;
         
         private Stat _moveSpeedStat;
         
@@ -18,15 +21,22 @@ namespace Lrw.Script.Enemy.MoveSystem
         public override void Initialize(ModuleOwner owner)
         {
             base.Initialize(owner);
-            statModule = owner.GetModule<IStatModule>();
-            Debug.Assert(statModule != null,"StatModule is not found");
+            _statModule = owner.GetModule<IStatModule>();
+            Debug.Assert(_statModule != null,"StatModule is not found"); 
+            _navAgent = owner.GetModule<IPolyNavAgent>();
+            Debug.Assert(_navAgent != null, "NavAgent is not found");
+            
         }
 
 
         public void AfterInit()
         {
+            _moveSpeedStat = _statModule.GetStat(moveSpeedStat);
+            Debug.Assert(_moveSpeedStat != null,"MoveSpeedStat is not found");
             
         }
+        
+        
         
         
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Lrw.Script.CoreSystem;
 using UnityEngine;
 
-namespace Lrw.Script.StatSystem
+namespace Lrw.Script.Agent.StatSystem
 {
     public class Stat
     {

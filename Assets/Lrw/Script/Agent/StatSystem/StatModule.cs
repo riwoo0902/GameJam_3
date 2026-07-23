@@ -3,7 +3,7 @@ using System.Linq;
 using DevLib.ModuleSystem;
 using UnityEngine;
 
-namespace Lrw.Script.StatSystem
+namespace Lrw.Script.Agent.StatSystem
 {
     public class StatModule : Module, IStatModule
     {
