@@ -11472,7 +11472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 659671088}
-  - component: {fileID: 659671089}
+  - component: {fileID: 659671091}
   - component: {fileID: 659671090}
   m_Layer: 0
   m_Name: Enemy
@@ -11499,18 +11499,6 @@ Transform:
   - {fileID: 1131447642}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &659671089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 659671087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4b5a3f11bed4376a547a33880b7f12c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Enemy.Enemy
 --- !u!114 &659671090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11523,10 +11511,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Behavior::Unity.Behavior.BehaviorGraphAgent
-  m_Graph: {fileID: 1671015527515380679, guid: 5432d05331019624bbd3a95e8d5f5602, type: 2}
+  m_Graph: {fileID: -7125249467485733556, guid: 5432d05331019624bbd3a95e8d5f5602, type: 2}
   m_BlackboardVariableOverridesList:
   - rid: 3374245576276705655
-  m_OriginalGraph: {fileID: 1671015527515380679, guid: 5432d05331019624bbd3a95e8d5f5602, type: 2}
+  m_OriginalGraph: {fileID: -7125249467485733556, guid: 5432d05331019624bbd3a95e8d5f5602, type: 2}
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -11540,6 +11528,18 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 659671087}
+--- !u!114 &659671091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659671087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e926e524f714a25954345a05d8464f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Enemy.Enemies.MeleeEnemy
 --- !u!1 &663963319
 GameObject:
   m_ObjectHideFlags: 0
@@ -11586,6 +11586,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Agent.HealthSystem.HealthModule
   maxHealthStatData: {fileID: 11400000, guid: d207959515f7bfc49b6647162acaacec, type: 2}
   currentHealth: 0
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1131447641
 GameObject:
   m_ObjectHideFlags: 0

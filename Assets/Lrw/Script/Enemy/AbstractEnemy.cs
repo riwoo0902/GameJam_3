@@ -2,7 +2,7 @@ using DevLib.ModuleSystem;
 
 namespace Lrw.Script.Enemy
 {
-    public class Enemy : ModuleOwner
+    public abstract class AbstractEnemy : ModuleOwner
     {
         
     }
