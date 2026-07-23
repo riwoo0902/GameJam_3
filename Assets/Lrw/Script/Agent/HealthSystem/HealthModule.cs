@@ -1,5 +1,5 @@
 using DevLib.ModuleSystem;
-using Lrw.Script.StatSystem;
+using Lrw.Script.Agent.StatSystem;
 using UnityEngine;
 
 namespace Lrw.Script.Agent.HealthSystem
@@ -21,7 +21,7 @@ namespace Lrw.Script.Agent.HealthSystem
             get => currentHealth;
             set => HealthChange(value);
         }
-
+        
         private float MaxHealth => _maxStat.Value;
         
         public event HealthChangedHandler OnHealthChanged;
@@ -40,18 +40,18 @@ namespace Lrw.Script.Agent.HealthSystem
             
             _maxStat.OnValueChanged += MaxHealthStatChanged;
         }
-
+        
         private void OnDestroy()
         {
             _maxStat.OnValueChanged -= MaxHealthStatChanged;
         }
-
+        
         private void MaxHealthStatChanged(float currentValue, float prevValue)
         {
             float delta = currentValue - prevValue;
             CurrentHealth += delta;
         }
-
+        
         private void HealthChange(float newHealth)
         { 
             float prevHealth = CurrentHealth;

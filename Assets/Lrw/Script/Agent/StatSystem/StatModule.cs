@@ -3,7 +3,7 @@ using System.Linq;
 using DevLib.ModuleSystem;
 using UnityEngine;
 
-namespace Lrw.Script.StatSystem
+namespace Lrw.Script.Agent.StatSystem
 {
     public class StatModule : Module, IStatModule
     {
@@ -25,8 +25,9 @@ namespace Lrw.Script.StatSystem
         
         private void OnValidate()
         {
+            if (statOverride == null) return;
+            
             HashSet<StatDataSo> hash = new();
-
             foreach (StatOverride statData in statOverride)
             {
                 if(statData == null) continue;
