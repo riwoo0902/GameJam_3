@@ -1,10 +1,9 @@
-using System;
 using DevLib.ModuleSystem;
 using Lrw.Script.Agent.HealthSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace JJM.Scripts.Player
+namespace JJM.Scripts.Players
 {
     public class Player : ModuleOwner
     {

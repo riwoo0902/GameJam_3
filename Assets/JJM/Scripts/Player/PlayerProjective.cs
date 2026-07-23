@@ -2,7 +2,7 @@
 using DevLib.ObjectPool.Runtime;
 using UnityEngine;
 
-namespace JJM.Scripts.Player
+namespace JJM.Scripts.Players
 {
     public class PlayerProjective : MonoBehaviour, IPoolable
     {

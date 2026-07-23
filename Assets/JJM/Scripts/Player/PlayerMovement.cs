@@ -1,11 +1,12 @@
 ﻿using DevLib.AnimatorSystem;
 using DevLib.ModuleSystem;
+using JJM.Scripts.Players.Stats;
 using Lrw.Script.Agent.StatSystem;
 using Publics.Agent;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace JJM.Scripts.Player
+namespace JJM.Scripts.Players
 {
     public class PlayerMovement : Module, IAfterInitModule
     {
@@ -46,7 +47,7 @@ namespace JJM.Scripts.Player
         private void FixedUpdate()
         {
             Vector2 inputDirection = Vector2.ClampMagnitude(_moveDir, 1f);
-            Vector2 targetVelocity = inputDirection * MoveSpeed;
+            Vector2 targetVelocity = inputDirection * (MoveSpeed * PlayerStatManager.Instance.SPD);
 
             bool isMoving = inputDirection.sqrMagnitude > 0.001f;
             float velocityChangeSpeed = isMoving
