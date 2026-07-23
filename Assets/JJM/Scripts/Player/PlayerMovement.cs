@@ -16,9 +16,9 @@ namespace JJM.Scripts.Player
         [SerializeField] private float acceleration = 20f;
         [SerializeField] private float deceleration = 8f;
 
-        [Header("Movement")] 
-        [SerializeField] private HashDataSO inputXHash;
-        [SerializeField] private HashDataSO inputYHash;
+        [Header("Hash")]
+        [SerializeField] private HashDataSO idleHash;
+        [SerializeField] private HashDataSO moveHash;
         
         private Vector2 _moveDir;
         private IRenderer _renderer;
@@ -44,11 +44,9 @@ namespace JJM.Scripts.Player
                 targetVelocity,
                 velocityChangeSpeed * Time.fixedDeltaTime
             );
-            
-            if (_moveDir.magnitude < 0.1f) return;
+
             Animator ownerAnimator = _renderer.Animator;
-            ownerAnimator.SetFloat(inputXHash.HashValue, _moveDir.x);
-            ownerAnimator.SetFloat(inputYHash.HashValue, _moveDir.y);
+            ownerAnimator.Play(_moveDir.magnitude > 0.1f ? moveHash.HashValue : idleHash.HashValue, 0);
         }
 
         public void OnMove(InputValue value)
