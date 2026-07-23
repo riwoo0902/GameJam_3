@@ -10,7 +10,7 @@ namespace JJM.Scripts.Player
     {
         [Header("Pool")]
         [SerializeField] private PoolItemSO projectile;
-        [SerializeField] private PoolInitializer poolManager;
+        [SerializeField] private PoolManagerSO poolManager;
 
         [Header("Attack")]
         [SerializeField] private float fireCoolTime = 0.2f;

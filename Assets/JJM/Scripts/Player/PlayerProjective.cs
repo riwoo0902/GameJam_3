@@ -12,7 +12,7 @@ namespace JJM.Scripts.Player
 
         private Coroutine _lifeTimeCoroutine;
 
-        public PoolItemSO PoolItem { get; set; }
+        [field: SerializeField] public PoolItemSO PoolItem { get; set; }
 
         public GameObject GameObject => gameObject;
 

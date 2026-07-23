@@ -253,7 +253,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 80aa3785eb42c3f49b47aebd730e2b74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -276,7 +276,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 79145530, guid: 911fe573373c6a34696f7f1013b9d844, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JJM.Scripts.Player.PlayerAttack
   projectile: {fileID: 11400000, guid: fc6dc9dc518660b41952b7a220f2e516, type: 2}
-  poolManager: {fileID: 918241467}
+  poolManager: {fileID: 11400000, guid: 90caa624d4ae4fc4f9e7b4db0a276e9d, type: 2}
   fireCoolTime: 0.4
 --- !u!1 &1818064230
 GameObject:
