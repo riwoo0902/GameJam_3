@@ -4,11 +4,7 @@ using UnityEngine;
 namespace DevLib.PolyNavMesh
 {
     /// <summary>
-    /// 런타임에 사용하는 폴리곤 정적 데이터.
-    ///
-    /// PathFinder의 NodeData(셀 단위 정적 데이터)에 대응한다.
-    /// A* 탐색 상태(G, F, parent)는 NavPolygon이 아닌 별도의 AStarNode에 저장하므로,
-    /// 여러 에이전트가 동시에 탐색해도 이 객체는 수정되지 않는다.
+    /// 런타임에서 사용하는 폴리곤 데이터 (AstarNode와 대응된다.)
     /// </summary>
     public class NavPolygon
     {
@@ -17,14 +13,16 @@ namespace DevLib.PolyNavMesh
         public Vector2[] vertices;
         public List<PortalData> portals;
 
-        public override bool Equals(object obj) => obj is NavPolygon p && p.id == id;
-        public override int GetHashCode() => id;
+        public override bool Equals(object obj) => obj is NavPolygon p && id == p.id;
+        public override int GetHashCode() => id; //id를 고유 해시코드로 사용한다.
 
         public static bool operator ==(NavPolygon a, NavPolygon b)
         {
-            if (a is null) return b is null;
+            if(a is null ) return b is null;
             return a.Equals(b);
         }
+
         public static bool operator !=(NavPolygon a, NavPolygon b) => !(a == b);
+
     }
 }

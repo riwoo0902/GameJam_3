@@ -37,7 +37,8 @@ namespace Lrw.Script.Agent.HealthSystem
         {
             _maxStat = _statModule.GetStat(maxHealthStatData);
             Debug.Assert(_maxStat != null, "StatModule is not found");
-            
+
+            currentHealth = MaxHealth;
             _maxStat.OnValueChanged += MaxHealthStatChanged;
         }
         
@@ -49,7 +50,7 @@ namespace Lrw.Script.Agent.HealthSystem
         private void MaxHealthStatChanged(float currentValue, float prevValue)
         {
             float delta = currentValue - prevValue;
-            CurrentHealth += delta;
+            CurrentHealth = Mathf.Clamp(CurrentHealth + delta,1f,MaxHealth);
         }
         
         private void HealthChange(float newHealth)
