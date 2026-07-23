@@ -61,6 +61,11 @@ namespace Lrw.Script.Agent.HealthSystem
             CurrentHealth -= damage;
         }
         
+        public void Heal(float heal)
+        {
+            CurrentHealth += heal;
+        }
+        
         private void HealthChange(float newHealth)
         { 
             float prevHealth = CurrentHealth;
