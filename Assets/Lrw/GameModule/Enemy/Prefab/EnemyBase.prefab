@@ -49,6 +49,56 @@ MonoBehaviour:
     <BaseValue>k__BackingField: 100
   - <StatSo>k__BackingField: {fileID: 11400000, guid: 736abd4cb5966664dac5981d57794a75, type: 2}
     <BaseValue>k__BackingField: 3
+  - <StatSo>k__BackingField: {fileID: 11400000, guid: dd04528f2aa1cd04d9b4159931d9b56e, type: 2}
+    <BaseValue>k__BackingField: 3
+--- !u!1 &457862360521841543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6934363633989605386}
+  - component: {fileID: 7558370049521071675}
+  m_Layer: 0
+  m_Name: DamageCaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6934363633989605386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457862360521841543}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9050139447867194318}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7558370049521071675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457862360521841543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ae12940f8c40b7b7c1136eaabf7371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.CombatSystem.CircleCaster
+  targetMash:
+    serializedVersion: 2
+    m_Bits: 8
+  radius: 2
 --- !u!1 &1268346840635014531
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +227,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6934363633989605386}
   m_Father: {fileID: 2910346565485938384}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3672643694533364987
@@ -192,7 +243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eedc3930e214e43ad1093016731e582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Enemy.EnemySkills.EnemyMeleeSkill
-  <AttackDistance>k__BackingField: 0.5
+  statDataSo: {fileID: 11400000, guid: dd04528f2aa1cd04d9b4159931d9b56e, type: 2}
+  <AttackDistance>k__BackingField: 1
+  damageCaster: {fileID: 7558370049521071675}
 --- !u!1 &7466863633978300151
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Behavior::Unity.Behavior.BehaviorGraphAgent
-  m_Graph: {fileID: -7125249467485733556, guid: 5432d05331019624bbd3a95e8d5f5602, type: 2}
+  m_Graph: {fileID: 4062158833670224892, guid: 5c7a9aa10c2b8c447b3c405f4d0e7cff, type: 2}
   m_BlackboardVariableOverridesList:
   - rid: 3374245576276705998
   m_OriginalGraph: {fileID: -7125249467485733556, guid: 5432d05331019624bbd3a95e8d5f5602, type: 2}

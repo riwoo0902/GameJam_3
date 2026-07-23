@@ -10,16 +10,26 @@ namespace Lrw.Script.BT.Action
     [NodeDescription(name: "UseSkill", story: "[Enemy] UseSkill to [Target]", category: "Action", id: "6b1374ff87389117a3c8d3ab18549ab5")]
     public partial class UseSkillAction : Unity.Behavior.Action
     {
-        [SerializeReference] public BlackboardVariable<AbstractEnemy> Enemy;
+        [SerializeReference] public BlackboardVariable<Enemy.Enemy> Enemy;
         [SerializeReference] public BlackboardVariable<Transform> Target;
 
+        private ISkillModule _skillModule;
         protected override Status OnStart()
         {
             if (Enemy.Value == null || Target.Value == null) return Status.Failure;
 
-            Enemy.Value.SkillModule.Use(Target.Value);
-        
-            return Status.Success;
+            _skillModule = Enemy.Value.SkillModule;
+            
+            if (_skillModule == null) return Status.Failure;
+            
+            _skillModule.SkillUse(Target.Value);
+            
+            return Status.Running;
+        }
+
+        protected override Status OnUpdate()
+        {
+            return _skillModule.SkillEnd ? Status.Success : Status.Running;
         }
     
     }

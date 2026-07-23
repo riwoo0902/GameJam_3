@@ -10,7 +10,7 @@ namespace Lrw.Script.BT.Action
     [NodeDescription(name: "MoveToTarget", story: "[Enemy] move to [Target]", category: "Enemy", id: "2fe60f798015a16907982ca73ffbff1e")]
     public partial class MoveToTargetAction : Unity.Behavior.Action
     {
-        [SerializeReference] public BlackboardVariable<AbstractEnemy> Enemy;
+        [SerializeReference] public BlackboardVariable<Enemy.Enemy> Enemy;
         [SerializeReference] public BlackboardVariable<Transform> Target;
 
         protected override Status OnStart()

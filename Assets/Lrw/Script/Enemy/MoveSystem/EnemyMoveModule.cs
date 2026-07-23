@@ -21,6 +21,8 @@ namespace Lrw.Script.Enemy.MoveSystem
         private IRenderer _render;
         
         private Stat _moveSpeedStat;
+
+        private bool _active;
         
         public override void Initialize(ModuleOwner owner)
         {
@@ -61,7 +63,14 @@ namespace Lrw.Script.Enemy.MoveSystem
 
         public void SetDestination(Vector2 targetPos)
         {
+            if(!_active) return;
             NavAgent.SetDestination(targetPos);
+        }
+
+        public void SetActive(bool active)
+        {
+            _active = active; 
+            if(!_active) NavAgent.ResetPath();
         }
         
         

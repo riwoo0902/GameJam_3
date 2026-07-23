@@ -73,7 +73,7 @@ namespace DevLib.PolyNavMesh
             IsMoving = true;
         }
 
-        private void ResetPath()
+        public void ResetPath()
         {
             if(_isCalculating) _cts?.Cancel();
             IsMoving = false;

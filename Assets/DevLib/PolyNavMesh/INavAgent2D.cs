@@ -9,5 +9,7 @@ namespace DevLib.PolyNavMesh
         float RemainingDistance { get; }
         Vector2 MoveDir { get; set; }
         void SetDestination(Vector2 destination);
+        void ResetPath();
+        
     }
 }
