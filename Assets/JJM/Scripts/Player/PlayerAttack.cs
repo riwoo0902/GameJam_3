@@ -1,31 +1,53 @@
 ﻿using System.Collections;
 using DevLib.ModuleSystem;
 using DevLib.ObjectPool.Runtime;
+using Lrw.Script.Agent.StatSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace JJM.Scripts.Player
 {
-    public class PlayerAttack : Module
+    public class PlayerAttack : Module, IAfterInitModule
     {
         [Header("Pool")]
         [SerializeField] private PoolItemSO projectile;
         [SerializeField] private PoolManagerSO poolManager;
 
-        [Header("Attack")]
-        [SerializeField] private float fireCoolTime = 0.2f;
+        [Header("Stat")] 
+        [SerializeField] private StatDataSo projectiveSpeedDataSo;
+        [SerializeField] private StatDataSo projectiveDamageDataSo;
+        [SerializeField] private StatDataSo attackSpeedDataSo;
 
+        private Stat _speedStat;
+        private float ProjectiveSpeed => _speedStat.Value;        
+        private Stat _damageStat;
+        private float ProjectiveDamage => _damageStat.Value;        
+        private Stat _attackSpeedStat;
+        private float AttackSpeedStat => _attackSpeedStat.Value;
+        
+        
         private bool _canFire = true;
 
         private IPlayerRotation _playerRotation;
+        private IStatModule _statModule;
 
         public override void Initialize(ModuleOwner owner)
         {
             base.Initialize(owner);
+            _statModule = owner.GetModule<IStatModule>();
 
             _playerRotation = owner.GetModule<PlayerRotation>();
         }
 
+        public void AfterInit()
+        {
+            _speedStat = _statModule.GetStat(projectiveSpeedDataSo);
+            Debug.Assert(_speedStat != null, "StatModule is not found");              
+            _damageStat = _statModule.GetStat(projectiveDamageDataSo);
+            Debug.Assert(_damageStat != null, "StatModule is not found");                
+            _attackSpeedStat = _statModule.GetStat(attackSpeedDataSo);
+            Debug.Assert(_attackSpeedStat != null, "StatModule is not found");    
+        }
         private void Update()
         {
             if (Mouse.current == null)
@@ -66,6 +88,9 @@ namespace JJM.Scripts.Player
                 return;
             }
 
+            projectileInstance.Speed =  ProjectiveSpeed;
+            projectileInstance.Damage = ProjectiveDamage;
+
             float angle = GetFourDirectionAngle(direction);
 
             projectileInstance.transform.SetPositionAndRotation(
@@ -78,7 +103,7 @@ namespace JJM.Scripts.Player
 
         private IEnumerator FireCoolDown()
         {
-            yield return new WaitForSeconds(fireCoolTime);
+            yield return new WaitForSeconds(AttackSpeedStat);
             _canFire = true;
         }
 
@@ -91,5 +116,6 @@ namespace JJM.Scripts.Player
 
             return direction.y >= 0f ? 90f : -90f;
         }
+
     }
 }

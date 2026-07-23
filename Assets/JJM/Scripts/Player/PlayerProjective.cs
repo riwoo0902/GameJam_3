@@ -6,9 +6,10 @@ namespace JJM.Scripts.Player
 {
     public class PlayerProjective : MonoBehaviour, IPoolable
     {
+        [field: SerializeField] public float Speed { get; set; } = 10f;
+        [field: SerializeField] public float Damage { get; set; } = 3f;
         [SerializeField] private PoolManagerSO poolManager;
-        [SerializeField] private float speed = 10f;
-        [SerializeField] private float lifeTime = 5f;
+        [SerializeField] private float lifeTime = 10f;
 
         private Coroutine _lifeTimeCoroutine;
 
@@ -31,7 +32,7 @@ namespace JJM.Scripts.Player
         private void FixedUpdate()
         {
             transform.position +=
-                transform.right * (speed * Time.fixedDeltaTime);
+                transform.right * (Speed * Time.fixedDeltaTime);
         }
 
         private IEnumerator LifeTimeCount()
