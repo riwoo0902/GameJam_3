@@ -11529,6 +11529,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1872434986091912310, guid: 635b4b7fbb99eba4599cdcc8bc7f279b, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872434986091912310, guid: 635b4b7fbb99eba4599cdcc8bc7f279b, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872434986091912310, guid: 635b4b7fbb99eba4599cdcc8bc7f279b, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1248326620}
+    - target: {fileID: 1872434986091912310, guid: 635b4b7fbb99eba4599cdcc8bc7f279b, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872434986091912310, guid: 635b4b7fbb99eba4599cdcc8bc7f279b, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TestDebug
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872434986091912310, guid: 635b4b7fbb99eba4599cdcc8bc7f279b, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Lrw.Script.Test.DebugTest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872434986091912310, guid: 635b4b7fbb99eba4599cdcc8bc7f279b, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2560771264649311136, guid: 635b4b7fbb99eba4599cdcc8bc7f279b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.67
@@ -11578,6 +11606,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 635b4b7fbb99eba4599cdcc8bc7f279b, type: 3}
+--- !u!1 &1248326619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1248326621}
+  - component: {fileID: 1248326620}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1248326620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248326619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ecc12d713a14ef0aff2b1dee9e2fb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Test.DebugTest
+  text: 12345
+--- !u!4 &1248326621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248326619}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.87811, y: 7.14122, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1258348301 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1819834442159797601, guid: 7aa0b5fc38e9790498a65fa09a2730c1, type: 3}
@@ -11600,7 +11673,7 @@ GameObject:
   - component: {fileID: 1749605813}
   - component: {fileID: 1749605814}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DamageCaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11635,7 +11708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.CombatSystem.CircleCaster
   targetMash:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   radius: 2
 --- !u!1 &1899750588
 GameObject:
@@ -11827,6 +11900,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1819834442159797601, guid: 7aa0b5fc38e9790498a65fa09a2730c1, type: 3}
+      propertyPath: statOverride.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819834442159797601, guid: 7aa0b5fc38e9790498a65fa09a2730c1, type: 3}
+      propertyPath: statOverride.Array.data[2].<StatSo>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: dd04528f2aa1cd04d9b4159931d9b56e, type: 2}
+    - target: {fileID: 1819834442159797601, guid: 7aa0b5fc38e9790498a65fa09a2730c1, type: 3}
+      propertyPath: statOverride.Array.data[2].<BaseValue>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2910346565485938384, guid: 7aa0b5fc38e9790498a65fa09a2730c1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.42
@@ -11867,6 +11952,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3672643694533364987, guid: 7aa0b5fc38e9790498a65fa09a2730c1, type: 3}
+      propertyPath: statDataSo
+      value: 
+      objectReference: {fileID: 11400000, guid: dd04528f2aa1cd04d9b4159931d9b56e, type: 2}
+    - target: {fileID: 3672643694533364987, guid: 7aa0b5fc38e9790498a65fa09a2730c1, type: 3}
+      propertyPath: damageCaster
+      value: 
+      objectReference: {fileID: 1749605814}
+    - target: {fileID: 3672643694533364987, guid: 7aa0b5fc38e9790498a65fa09a2730c1, type: 3}
+      propertyPath: damageCasters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672643694533364987, guid: 7aa0b5fc38e9790498a65fa09a2730c1, type: 3}
+      propertyPath: 'damageCasters.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1749605814}
     - target: {fileID: 8712935442873690760, guid: 7aa0b5fc38e9790498a65fa09a2730c1, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -11889,3 +11990,4 @@ SceneRoots:
   - {fileID: 82322548}
   - {fileID: 1899750589}
   - {fileID: 954655831}
+  - {fileID: 1248326621}
