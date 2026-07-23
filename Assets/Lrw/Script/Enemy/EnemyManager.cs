@@ -1,7 +1,4 @@
-﻿using System;
-using JJM.Scripts.Player;
-using Lrw.Script.CoreSystem;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Lrw.Script.Enemy
 {

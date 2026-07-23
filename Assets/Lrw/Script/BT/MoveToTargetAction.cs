@@ -13,21 +13,17 @@ namespace Lrw.Script.BT
     public partial class MoveToTargetAction : Action
     {
         [SerializeReference] public BlackboardVariable<AbstractEnemy> Enemy;
-        [SerializeReference] public BlackboardVariable<Player> Target;
+        [SerializeReference] public BlackboardVariable<Transform> Target;
 
         protected override Status OnStart()
         {
-            return Status.Running;
-        }
+            if (Enemy.Value == null || Target.Value == null || Enemy.Value.MoveModule == null) return Status.Failure;
 
-        protected override Status OnUpdate()
-        {
+            Enemy.Value.MoveModule.SetDestination(Target.Value.transform.position);
+            
             return Status.Success;
         }
-
-        protected override void OnEnd()
-        {
-        }
+        
     }
 }
 
