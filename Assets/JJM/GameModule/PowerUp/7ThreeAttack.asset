@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 394f3428d6874d41b4b9abc2d246f2b6, type: 3}
+  m_Name: 7ThreeAttack
+  m_EditorClassIdentifier: Assembly-CSharp::JJM.Scripts.PowerUp.ThreeAttackPowerUpSo
+  <Icon>k__BackingField: {fileID: 0}
+  <Name>k__BackingField: "\uC0B0\uD0C4\uCD1D"
+  <Lore>k__BackingField: "\uACF5\uACA9\uC774 3\uAC1C\uB85C \uBD84\uC5F4\uB429\uB2C8\uB2E4.,
+    \uACF5\uACA9\uB825 -0.4"
+  <Price>k__BackingField: 0
+  SPD: 0
+  ATK: -0.4
+  ATS: 0
+  PSPD: 0
+  VIS: 0
+  poolManager: {fileID: 11400000, guid: 90caa624d4ae4fc4f9e7b4db0a276e9d, type: 2}
+  spreadRotation: 20
+  projectile: {fileID: 11400000, guid: fc6dc9dc518660b41952b7a220f2e516, type: 2}
