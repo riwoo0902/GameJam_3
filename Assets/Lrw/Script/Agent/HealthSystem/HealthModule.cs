@@ -1,6 +1,7 @@
 using DevLib.ModuleSystem;
 using Lrw.Script.Agent.StatSystem;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Lrw.Script.Agent.HealthSystem
 {
@@ -25,6 +26,8 @@ namespace Lrw.Script.Agent.HealthSystem
         private float MaxHealth => _maxStat.Value;
         
         public event HealthChangedHandler OnHealthChanged;
+        public UnityEvent OnTakeDamage;
+        public UnityEvent OnDie;
         
         public override void Initialize(ModuleOwner owner)
         {
@@ -52,14 +55,27 @@ namespace Lrw.Script.Agent.HealthSystem
             float delta = currentValue - prevValue;
             CurrentHealth = Mathf.Clamp(CurrentHealth + delta,1f,MaxHealth);
         }
+
+        private void TakeDamage(float damage)
+        {
+            CurrentHealth -= damage;
+        }
         
         private void HealthChange(float newHealth)
         { 
             float prevHealth = CurrentHealth;
             CurrentHealth = Mathf.Clamp(newHealth,0,MaxHealth);
             OnHealthChanged?.Invoke(CurrentHealth,prevHealth, MaxHealth);
+
+            if (prevHealth > newHealth)
+            {
+                OnTakeDamage?.Invoke();
+            }
+
+            if (CurrentHealth <= 0)
+            {
+                OnDie?.Invoke();
+            }
         }
-        
-        
     }
 }
