@@ -20,7 +20,7 @@ namespace Lrw.Script.Enemy.MoveSystem
             base.Initialize(owner);
             _statModule = owner.GetModule<IStatModule>();
             Debug.Assert(_statModule != null,"StatModule is not found"); 
-            _navAgent = owner.GetModule<INavAgent2D>();
+            _navAgent = owner.GetComponent<INavAgent2D>();
             Debug.Assert(_navAgent != null, "NavAgent is not found");
         }
 

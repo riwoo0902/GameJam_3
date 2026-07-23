@@ -11445,7 +11445,7 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &599504524
+--- !u!1 &581751042
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11453,42 +11453,65 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 599504525}
-  - component: {fileID: 599504526}
+  - component: {fileID: 581751043}
+  - component: {fileID: 581751045}
+  - component: {fileID: 581751044}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &599504525
+--- !u!4 &581751043
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599504524}
+  m_GameObject: {fileID: 581751042}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.54748, y: 0.99281, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 659671088}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &599504526
+--- !u!114 &581751044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599504524}
+  m_GameObject: {fileID: 581751042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2440768159a342a49bf55c842ecfd60e, type: 3}
+  m_Script: {fileID: 11500000, guid: dd6e027ba6814906ad876accd7c74197, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JJM.Scripts.Player.Player
+  m_EditorClassIdentifier: Assembly-CSharp::Publics.Agent.AgentRenderer
+--- !u!95 &581751045
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581751042}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &619305168
 GameObject:
   m_ObjectHideFlags: 0
@@ -11566,6 +11589,7 @@ GameObject:
   - component: {fileID: 659671088}
   - component: {fileID: 659671091}
   - component: {fileID: 659671090}
+  - component: {fileID: 659671092}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -11589,6 +11613,7 @@ Transform:
   - {fileID: 663963320}
   - {fileID: 1258348300}
   - {fileID: 1131447642}
+  - {fileID: 581751043}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &659671090
@@ -11637,7 +11662,7 @@ MonoBehaviour:
           m_Value0: 996622495242329636
           m_Value1: 5671959570958394265
         Name: Target
-        m_Value: {fileID: 599504526}
+        m_Value: {fileID: 0}
 --- !u!114 &659671091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11650,6 +11675,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e926e524f714a25954345a05d8464f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Enemy.Enemies.MeleeEnemy
+--- !u!114 &659671092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659671087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b7ac91852f409e8be3b1ee86eacb27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PolyNavMesh_assembly::DevLib.PolyNavMesh.NavAgent2D
+  navMeshData: {fileID: 11400000, guid: f0f11fab0739a2e4a8de885f86d359e7, type: 2}
+  speed: 0
+  stoppingDistance: 0.3
 --- !u!1 &663963319
 GameObject:
   m_ObjectHideFlags: 0
@@ -11711,7 +11751,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1131447642}
-  - component: {fileID: 1131447644}
   - component: {fileID: 1131447643}
   m_Layer: 0
   m_Name: Nav
@@ -11748,21 +11787,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Enemy.MoveSystem.EnemyMoveModule
   moveSpeedStat: {fileID: 11400000, guid: 736abd4cb5966664dac5981d57794a75, type: 2}
---- !u!114 &1131447644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131447641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b7ac91852f409e8be3b1ee86eacb27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: PolyNavMesh_assembly::DevLib.PolyNavMesh.NavAgent2D
-  navMeshData: {fileID: 11400000, guid: f0f11fab0739a2e4a8de885f86d359e7, type: 2}
-  speed: 0
-  stoppingDistance: 0.3
 --- !u!1 &1258348299
 GameObject:
   m_ObjectHideFlags: 0
@@ -11812,6 +11836,51 @@ MonoBehaviour:
     <BaseValue>k__BackingField: 100
   - <StatSo>k__BackingField: {fileID: 11400000, guid: 736abd4cb5966664dac5981d57794a75, type: 2}
     <BaseValue>k__BackingField: 3
+--- !u!1 &1899750588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1899750589}
+  - component: {fileID: 1899750590}
+  m_Layer: 0
+  m_Name: EnemyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1899750589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899750588}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.94462, y: 5.06289, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1899750590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899750588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183bf47cb30a47f1a91aea1764955045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Enemy.EnemyManager
+  target: {fileID: 0}
 --- !u!1 &2135776108
 GameObject:
   m_ObjectHideFlags: 0
@@ -11912,4 +11981,4 @@ SceneRoots:
   - {fileID: 619305170}
   - {fileID: 659671088}
   - {fileID: 82322548}
-  - {fileID: 599504525}
+  - {fileID: 1899750589}

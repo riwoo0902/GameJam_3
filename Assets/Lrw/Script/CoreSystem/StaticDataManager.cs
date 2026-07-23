@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Lrw.Script.CoreSystem.StaticDataSystem
+namespace Lrw.Script.CoreSystem
 {
     public static class StaticDataManager
     {
