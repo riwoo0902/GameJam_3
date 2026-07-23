@@ -11,7 +11,7 @@ namespace Lrw.Script.Agent.StatSystem
         
         public float Value => Mathf.Clamp(_baseValue + _modifierValue,StatDataSo.MinValue, StatDataSo.MaxValue);
         
-        private readonly Dictionary<KeySo,float> _modifiers = new();
+        private readonly Dictionary<object,float> _modifiers = new();
         
         private readonly float _baseValue;
         private float _modifierValue;
@@ -27,7 +27,7 @@ namespace Lrw.Script.Agent.StatSystem
             _baseValue = baseValue;
         }
         
-        public void AddModifier(KeySo modifier, float value)
+        public void AddModifier(object modifier, float value)
         {
             if(modifier == null) return;
             if(!_modifiers.TryAdd(modifier, value)) return;
@@ -36,7 +36,7 @@ namespace Lrw.Script.Agent.StatSystem
             OnValueChanged?.Invoke(Value, prevValue);
         }
 
-        public void RemoveModifier(KeySo modifier)
+        public void RemoveModifier(object modifier)
         {
             if(modifier == null) return;
             if (!_modifiers.TryGetValue(modifier, out float value)) return;

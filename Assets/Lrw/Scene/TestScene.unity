@@ -246,6 +246,54 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &82322546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 82322548}
+  - component: {fileID: 82322547}
+  m_Layer: 0
+  m_Name: StatTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &82322547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82322546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd1e4def0934ee98507e4a524a5753a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Test.StatTest
+  statModule: {fileID: 1258348301}
+  targetStat: {fileID: 11400000, guid: d207959515f7bfc49b6647162acaacec, type: 2}
+  value: 10
+  debugValue: 0
+--- !u!4 &82322548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82322546}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.54748, y: 0.99281, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &455253731
 GameObject:
   m_ObjectHideFlags: 0
@@ -11397,6 +11445,50 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &599504524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 599504525}
+  - component: {fileID: 599504526}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &599504525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599504524}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.54748, y: 0.99281, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &599504526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599504524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2440768159a342a49bf55c842ecfd60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JJM.Scripts.Player.Player
 --- !u!1 &619305168
 GameObject:
   m_ObjectHideFlags: 0
@@ -11514,6 +11606,8 @@ MonoBehaviour:
   m_Graph: {fileID: -7125249467485733556, guid: 5432d05331019624bbd3a95e8d5f5602, type: 2}
   m_BlackboardVariableOverridesList:
   - rid: 3374245576276705655
+  - rid: 3374245576276705842
+  - rid: 3374245576276705843
   m_OriginalGraph: {fileID: -7125249467485733556, guid: 5432d05331019624bbd3a95e8d5f5602, type: 2}
   m_IsInitialised: 0
   m_IsStarted: 0
@@ -11528,6 +11622,22 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 659671087}
+    - rid: 3374245576276705842
+      type: {class: 'BlackboardVariable`1[[Lrw.Script.Enemy.AbstractEnemy, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 11875829110801293411
+          m_Value1: 7428284077485160356
+        Name: Enemy
+        m_Value: {fileID: 659671091}
+    - rid: 3374245576276705843
+      type: {class: 'BlackboardVariable`1[[JJM.Scripts.Player.Player, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 996622495242329636
+          m_Value1: 5671959570958394265
+        Name: Target
+        m_Value: {fileID: 599504526}
 --- !u!114 &659671091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11650,7 +11760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b7ac91852f409e8be3b1ee86eacb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: PolyNavMesh_assembly::DevLib.PolyNavMesh.NavAgent2D
-  navMeshData: {fileID: 0}
+  navMeshData: {fileID: 11400000, guid: f0f11fab0739a2e4a8de885f86d359e7, type: 2}
   speed: 0
   stoppingDistance: 0.3
 --- !u!1 &1258348299
@@ -11698,10 +11808,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.StatSystem.StatModule
   statOverride:
-  - statSo: {fileID: 0}
-    value: 0
-  - statSo: {fileID: 0}
-    value: 0
+  - <StatSo>k__BackingField: {fileID: 11400000, guid: d207959515f7bfc49b6647162acaacec, type: 2}
+    <BaseValue>k__BackingField: 100
+  - <StatSo>k__BackingField: {fileID: 11400000, guid: 736abd4cb5966664dac5981d57794a75, type: 2}
+    <BaseValue>k__BackingField: 3
 --- !u!1 &2135776108
 GameObject:
   m_ObjectHideFlags: 0
@@ -11801,3 +11911,5 @@ SceneRoots:
   - {fileID: 2135776111}
   - {fileID: 619305170}
   - {fileID: 659671088}
+  - {fileID: 82322548}
+  - {fileID: 599504525}

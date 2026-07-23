@@ -32,8 +32,8 @@ MonoBehaviour:
           rid: 3374245576276705722
         BlackboardGroupReferences: []
         Root:
-          rid: 3374245576276705787
-        m_VersionTimestamp: 639204141487926392
+          rid: 3374245576276705820
+        m_VersionTimestamp: 639204145969915478
     - rid: 3374245576276705722
       type: {class: BlackboardReference, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -44,10 +44,43 @@ MonoBehaviour:
       type: {class: Blackboard, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         m_Variables:
-        - rid: 3374245576276705789
-        - rid: 3374245576276705790
-        - rid: 3374245576276705791
-    - rid: 3374245576276705787
+        - rid: 3374245576276705802
+        - rid: 3374245576276705803
+        - rid: 3374245576276705804
+        - rid: 3374245576276705805
+    - rid: 3374245576276705802
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        m_Value: {fileID: 0}
+    - rid: 3374245576276705803
+      type: {class: 'BlackboardVariable`1[[Lrw.Script.Enemy.AbstractEnemy, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 11875829110801293411
+          m_Value1: 7428284077485160356
+        Name: Enemy
+        m_Value: {fileID: 0}
+    - rid: 3374245576276705804
+      type: {class: 'BlackboardVariable`1[[Lrw.Script.Enemy.EnemyState, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 13165607213601971812
+          m_Value1: 1291550322916997823
+        Name: State
+        m_Value: 0
+    - rid: 3374245576276705805
+      type: {class: 'BlackboardVariable`1[[JJM.Scripts.Player.Player, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 996622495242329636
+          m_Value1: 5671959570958394265
+        Name: Target
+        m_Value: {fileID: 0}
+    - rid: 3374245576276705820
       type: {class: Start, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         ID:
@@ -58,10 +91,10 @@ MonoBehaviour:
         m_Parent:
           rid: -2
         m_Child:
-          rid: 3374245576276705788
+          rid: 3374245576276705821
         Repeat: 1
         AllowMultipleRepeatsPerTick: 0
-    - rid: 3374245576276705788
+    - rid: 3374245576276705821
       type: {class: SwitchComposite, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         ID:
@@ -70,38 +103,14 @@ MonoBehaviour:
         Graph:
           rid: 3374245576276705721
         m_Parent:
-          rid: 3374245576276705787
+          rid: 3374245576276705820
         m_Children:
         - rid: -2
         - rid: -2
         - rid: -2
         m_RegisteredObservers: []
         EnumVariable:
-          rid: 3374245576276705791
-    - rid: 3374245576276705789
-      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 1
-          m_Value1: 0
-        Name: Self
-        m_Value: {fileID: 0}
-    - rid: 3374245576276705790
-      type: {class: 'BlackboardVariable`1[[Lrw.Script.Enemy.AbstractEnemy, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 11875829110801293411
-          m_Value1: 7428284077485160356
-        Name: Enemy
-        m_Value: {fileID: 0}
-    - rid: 3374245576276705791
-      type: {class: 'BlackboardVariable`1[[Lrw.Script.Enemy.EnemyState, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 13165607213601971812
-          m_Value1: 1291550322916997823
-        Name: State
-        m_Value: 0
+          rid: 3374245576276705804
 --- !u!114 &-5983254233887958301
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -121,7 +130,8 @@ MonoBehaviour:
   - rid: 3374245576276705726
   - rid: 3374245576276705730
   - rid: 3374245576276705738
-  m_VersionTimestamp: 639204141485292201
+  - rid: 3374245576276705792
+  m_VersionTimestamp: 639204142107817995
   m_CommandBuffer:
     m_Commands: []
   m_RuntimeBlackboardAsset: {fileID: -1900521689055796559}
@@ -158,6 +168,16 @@ MonoBehaviour:
         IsExposed: 1
         m_IsShared: 0
         m_Value: 0
+    - rid: 3374245576276705792
+      type: {class: 'TypedVariableModel`1[[JJM.Scripts.Player.Player, Assembly-CSharp]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 996622495242329636
+          m_Value1: 5671959570958394265
+        Name: Target
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: {fileID: 0}
 --- !u!114 &-1900521689055796559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c02bb70996b49eba31d0c206e28da24, type: 3}
   m_Name: MeleeEnemyBT Blackboard
   m_EditorClassIdentifier: Unity.Behavior::Unity.Behavior.RuntimeBlackboardAsset
-  VersionTimestamp: 639204141485292201
+  VersionTimestamp: 639204142107817995
   AssetID:
     m_Value0: 0
     m_Value1: 0
@@ -179,6 +199,7 @@ MonoBehaviour:
     - rid: 3374245576276705727
     - rid: 3374245576276705734
     - rid: 3374245576276705743
+    - rid: 3374245576276705799
   m_SharedBlackboardVariableGuids: []
   references:
     version: 2
@@ -207,6 +228,14 @@ MonoBehaviour:
           m_Value1: 1291550322916997823
         Name: State
         m_Value: 0
+    - rid: 3374245576276705799
+      type: {class: 'BlackboardVariable`1[[JJM.Scripts.Player.Player, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 996622495242329636
+          m_Value1: 5671959570958394265
+        Name: Target
+        m_Value: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +256,7 @@ MonoBehaviour:
   - rid: 3374245576276705755
   - rid: 3374245576276705756
   - rid: 3374245576276705757
-  m_VersionTimestamp: 639204141487926392
+  m_VersionTimestamp: 639204145969915478
   m_SerializedVersion: 3
   m_DebugInfo: {fileID: 3686578225928868622}
   m_RuntimeGraph: {fileID: -7125249467485733556}
@@ -282,7 +311,7 @@ MonoBehaviour:
     - rid: 3374245576276705728
       type: {class: StartNodeModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
       data:
-        Position: {x: -101.33335, y: -142.93335}
+        Position: {x: -105.066696, y: -184.53337}
         ID:
           m_Value0: 13228998005826188693
           m_Value1: 796398281933752117
@@ -311,7 +340,7 @@ MonoBehaviour:
     - rid: 3374245576276705748
       type: {class: SwitchNodeModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
       data:
-        Position: {x: -114.18051, y: -24.886635}
+        Position: {x: -116.84717, y: -57.95332}
         ID:
           m_Value0: 14230434304930773566
           m_Value1: 6000499130780399160
@@ -371,7 +400,7 @@ MonoBehaviour:
     - rid: 3374245576276705755
       type: {class: FloatingPortNodeModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
       data:
-        Position: {x: -466.4243, y: 119.70343}
+        Position: {x: -465.3576, y: 103.70343}
         ID:
           m_Value0: 10825500881946707905
           m_Value1: 3445016859849505906
@@ -387,7 +416,7 @@ MonoBehaviour:
     - rid: 3374245576276705756
       type: {class: FloatingPortNodeModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
       data:
-        Position: {x: -114.1805, y: 112.84663}
+        Position: {x: -120.58049, y: 104.31328}
         ID:
           m_Value0: 18408393719191200794
           m_Value1: 13137321733833585033
@@ -403,7 +432,7 @@ MonoBehaviour:
     - rid: 3374245576276705757
       type: {class: FloatingPortNodeModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
       data:
-        Position: {x: 198.16896, y: 117.83338}
+        Position: {x: 193.90225, y: 105.566734}
         ID:
           m_Value0: 15708358181519357467
           m_Value1: 9777202669860836655
