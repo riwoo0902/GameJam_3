@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Lrw.Script.CombatSystem;
 using UnityEngine;
 
 namespace Lrw.Script.Enemy.EnemySkills
@@ -6,7 +6,8 @@ namespace Lrw.Script.Enemy.EnemySkills
     public class EnemyMeleeSkill : AbstractSkillModule
     {
         private float _coolTime;
-
+        [SerializeField] private DamageCaster damageCaster;
+        
         private void Update()
         {
             _coolTime -= Time.deltaTime;
@@ -20,7 +21,7 @@ namespace Lrw.Script.Enemy.EnemySkills
         public override void Use(Transform target = null)
         {
             _coolTime = 1;
-            Debug.Log("Skill Use");
+            damageCaster.Cast(Stat.Value);
         }
         
     }
