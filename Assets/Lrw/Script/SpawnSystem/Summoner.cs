@@ -69,7 +69,7 @@ namespace Lrw.Script.SpawnSystem
         private void EnemyDie()
         {
             currentDieCount += 1;
-            if (allEnemyCount == currentDieCount)
+            if (allEnemyCount <= currentDieCount)
             {
                 StageClear?.Invoke();
             }
