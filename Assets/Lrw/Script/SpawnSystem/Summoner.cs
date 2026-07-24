@@ -23,6 +23,7 @@ namespace Lrw.Script.SpawnSystem
         public void Summon()
         {
             allEnemyCount = 0;
+            currentDieCount = 0;
             foreach (SummonDataSo summonData in summonDataList)
             {
                 StartCoroutine(SummonCoroutine(summonData));
@@ -54,6 +55,14 @@ namespace Lrw.Script.SpawnSystem
                 {
                     health.OnDie.AddListener(EnemyDie);
                 }
+                else
+                {
+                    Debug.LogError("HealthModule is not found");
+                }
+            }
+            else
+            {
+                Debug.LogError("ModuleOwner is not found");
             }
         }
 
