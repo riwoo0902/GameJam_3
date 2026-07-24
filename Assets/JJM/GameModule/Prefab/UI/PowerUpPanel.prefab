@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3747f05ecb8949a29500727d71d9af0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JJM.Scripts.UI.PowerUpPanel
-  powerUpSo: {fileID: 0}
+  <PowerUpSo>k__BackingField: {fileID: 0}
   powerUpIcon: {fileID: 8427244739803920421}
   powerUpName: {fileID: 6059693307856710379}
   powerUpLore: {fileID: 9038955933820361911}
@@ -347,7 +347,8 @@ MonoBehaviour:
   priceTextEnd: "\uCCB4\uB825"
   powerUpPrice: {fileID: 6905322334243403696}
   hashIdle: {fileID: 11400000, guid: b39f19eec2333e94bad0d0f1ab09fb9b, type: 2}
-  hashEnd: {fileID: 11400000, guid: 698624fc944dd034387c1a4e693d4ae4, type: 2}
+  hashEnd: {fileID: 11400000, guid: 634a02077c042fc469616d85322d13b9, type: 2}
+  _animator: {fileID: 4950421303186020942}
 --- !u!95 &4950421303186020942
 Animator:
   serializedVersion: 7

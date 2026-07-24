@@ -80,6 +80,17 @@ namespace JJM.Scripts.Players
             Fire(direction);
         }
 
+        public void F()
+        {
+            Vector2 direction = _playerRotation.MouseRelativePosition;
+
+            if (direction.sqrMagnitude <= 0.001f)
+            {
+                return;
+            }
+
+            Fire(direction);
+        }
         private void Fire(Vector2 direction)
         {
             _canFire = false;

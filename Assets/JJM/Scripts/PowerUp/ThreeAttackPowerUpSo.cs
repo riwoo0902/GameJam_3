@@ -15,7 +15,6 @@ namespace JJM.Scripts.PowerUp
         [SerializeField] private float spreadRotation = 20f;
         [SerializeField] private PoolItemSO projectile;
 
-        private Player _player;
         private PlayerAttack _attack;
         private IPlayerRotation _rotation;
 
@@ -25,7 +24,12 @@ namespace JJM.Scripts.PowerUp
         {
             base.PowerUpPlay();
 
-            if (!TryInitialize())
+            if (!TryInitializePlayer())
+            {
+                return;
+            }
+
+            if (!TryInitializeModules())
             {
                 return;
             }
@@ -39,18 +43,17 @@ namespace JJM.Scripts.PowerUp
             _isSubscribed = true;
         }
 
-        private bool TryInitialize()
+        private bool TryInitializeModules()
         {
-            _player = FindFirstObjectByType<Player>();
-
-            if (_player == null)
+            if (_attack == null)
             {
-                Debug.LogError($"{name}: Player를 찾지 못했습니다.");
-                return false;
+                _attack = Player.GetModule<PlayerAttack>();
             }
 
-            _attack = _player.GetModule<PlayerAttack>();
-            _rotation = _player.GetModule<IPlayerRotation>();
+            if (_rotation == null)
+            {
+                _rotation = Player.GetModule<IPlayerRotation>();
+            }
 
             if (_attack == null)
             {
@@ -67,19 +70,15 @@ namespace JJM.Scripts.PowerUp
             return true;
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
             Unsubscribe();
+            base.OnDisable();
         }
 
         private void Unsubscribe()
         {
-            if (!_isSubscribed)
-            {
-                return;
-            }
-
-            if (_attack != null)
+            if (_isSubscribed && _attack != null)
             {
                 _attack.OnAttack.RemoveListener(HandleThreeAttack);
             }
@@ -87,19 +86,19 @@ namespace JJM.Scripts.PowerUp
             _isSubscribed = false;
             _attack = null;
             _rotation = null;
-            _player = null;
         }
 
         private void HandleThreeAttack()
         {
-            if (_player == null || _attack == null || _rotation == null)
+            if (Player == null || _attack == null || _rotation == null)
             {
                 Unsubscribe();
                 return;
             }
 
             float baseAngle =
-                PlayerAttack.GetFourDirectionAngle(_rotation.MouseRelativePosition);
+                PlayerAttack.GetFourDirectionAngle(
+                    _rotation.MouseRelativePosition);
 
             SpawnProjectile(baseAngle - spreadRotation);
             SpawnProjectile(baseAngle + spreadRotation);
@@ -107,6 +106,12 @@ namespace JJM.Scripts.PowerUp
 
         private void SpawnProjectile(float angle)
         {
+            if (poolManager == null || projectile == null)
+            {
+                Debug.LogError($"{name}: 풀 또는 투사체가 설정되지 않았습니다.");
+                return;
+            }
+
             PlayerProjective projectileInstance =
                 poolManager.Pop<PlayerProjective>(projectile);
 
@@ -117,6 +122,12 @@ namespace JJM.Scripts.PowerUp
 
             PlayerStatManager statManager = PlayerStatManager.Instance;
 
+            if (statManager == null)
+            {
+                Debug.LogError("PlayerStatManager.Instance가 존재하지 않습니다.");
+                return;
+            }
+
             projectileInstance.Speed =
                 _attack.ProjectiveSpeed * statManager.PSPD;
 
@@ -124,7 +135,7 @@ namespace JJM.Scripts.PowerUp
                 _attack.ProjectiveDamage * statManager.ATK;
 
             projectileInstance.transform.SetPositionAndRotation(
-                _player.transform.position,
+                Player.transform.position,
                 Quaternion.Euler(0f, 0f, angle)
             );
         }

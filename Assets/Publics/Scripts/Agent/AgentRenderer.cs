@@ -17,7 +17,7 @@ namespace Publics.Agent
         {
             // Play, CrossFade, CrosseFadeFixedTime 
             //         정규화            조절
-            Animator.CrossFadeInFixedTime(clipHash, crossFadeDuration, layerIndex, normalizedTime);
+//            Animator.CrossFadeInFixedTime(clipHash, crossFadeDuration, layerIndex, normalizedTime);
         }
 
         public void SetFloat(int idHash, float value)
