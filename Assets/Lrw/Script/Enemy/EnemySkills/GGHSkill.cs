@@ -19,6 +19,7 @@ namespace Lrw.Script.Enemy.EnemySkills
             _coolTime -= Time.deltaTime;
         }
         
+        
         public override bool CanUse(Transform target = null)
         {
             return _coolTime <= 0f;
@@ -27,11 +28,11 @@ namespace Lrw.Script.Enemy.EnemySkills
         
         protected override void Use(Transform target = null)
         {
-            _coolTime = 5f;
+            _coolTime = 2f;
             EnemyBullet bullet = poolManagerSo.Pop<EnemyBullet>(poolItemSo);
             bullet.GameObject.SetActive(true);
             bullet.transform.position = transform.position;
-            Vector2 vec = (target.position - transform.position).normalized * bulletSpeed; 
+            Vector2 vec = (target.position - _owner.transform.position).normalized * bulletSpeed; 
             bullet.Init(vec,Stat.Value);
             SetSkillEnd();
         }
