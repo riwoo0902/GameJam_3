@@ -41,12 +41,10 @@ namespace Lrw.Script.UI.MainUI
         {
             GameExit.Exit();
         }
-
-        private bool _active = false;
+        
         private void MenuButtonClick()
         {
-            _active = !_active;
-            EventBus<MenuEvent>.Invoke(UIEvents.Menu.Init(_active));
+            EventBus<MenuEvent>.Invoke(UIEvents.Menu);
         }
         
         
