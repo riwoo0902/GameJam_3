@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using DevLib.ModuleSystem;
 using DevLib.ObjectPool.Runtime;
+using Lrw.Script.Agent.HealthSystem;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 namespace Lrw.Script.SpawnSystem
@@ -9,6 +13,11 @@ namespace Lrw.Script.SpawnSystem
     public class Summoner : MonoBehaviour
     {
         [SerializeField] private SummonDataSo[] summonDataList;
+
+        private int allEnemyCount;
+        private int currentDieCount = 0;
+
+        public UnityEvent StageClear;
         
         private void Awake()
         {
@@ -17,25 +26,54 @@ namespace Lrw.Script.SpawnSystem
 
         private void Summon()
         {
+            allEnemyCount = 0;
             foreach (SummonDataSo summonData in summonDataList)
             {
                 StartCoroutine(SummonCoroutine(summonData));
+                allEnemyCount += summonData.Count * (summonData.LoopCount + 1);
             }
         }
 
         private IEnumerator SummonCoroutine(SummonDataSo summonData)
         {
             yield return new WaitForSeconds(summonData.StartDelay);
-
-            do
+            
+            for (int i = 0; i < summonData.Count; i++)
             {
+                CreateGameObject(summonData);
+            }
+            if(summonData.LoopCount <= 0)  yield break;
+            
+            for (int loop = 0; loop < summonData.LoopCount; loop++)
+            {
+                yield return new WaitForSeconds(summonData.LoopDelay);
                 for (int i = 0; i < summonData.Count; i++)
                 {
-                    GameObject go = Instantiate(summonData.Prefab);
-                    go.transform.position = (Vector2)(Vector3)summonData.Pos + Random.insideUnitCircle * summonData.RandomRange;
+                    CreateGameObject(summonData);
                 }
-                yield return new WaitForSeconds(summonData.LoopDelay);
-            } while (summonData.Loop);
+            }
+        }
+
+        private void CreateGameObject(SummonDataSo data)
+        {
+            GameObject go = Instantiate(data.Prefab);
+            go.transform.position = (Vector2)(Vector3)data.Pos + Random.insideUnitCircle * data.RandomRange;
+            if (go.TryGetComponent(out ModuleOwner owner))
+            {
+                if (owner.TryGetModule(out HealthModule health))
+                {
+                    health.OnDie.AddListener(EnemyDie);
+                }
+            }
+        }
+
+        private void EnemyDie()
+        {
+            currentDieCount += 1;
+            if (allEnemyCount == currentDieCount)
+            {
+                StageClear?.Invoke();
+            }
         }
 
 
