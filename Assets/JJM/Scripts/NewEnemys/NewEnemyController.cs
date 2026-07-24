@@ -20,6 +20,7 @@ namespace JJM.Scripts.NewEnemys
         public UnityEvent attackEvent;
         [SerializeField] private HashDataSO hashDataX;
         [SerializeField] private HashDataSO hashDataY;
+
         public float PlayerRecognitionDistance => playerRecognitionDistance;
         public float AttackSpeed => attackSpeed;
         public bool IsAttackStop => isAttackStop;

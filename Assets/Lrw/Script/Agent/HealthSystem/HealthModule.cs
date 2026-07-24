@@ -76,10 +76,10 @@ namespace Lrw.Script.Agent.HealthSystem
         {
             float delta = currentValue - prevValue;
 
-            CurrentHealth = Mathf.Clamp(
+            /*CurrentHealth = Mathf.Clamp(
                 CurrentHealth + delta,
                 1f,
-                MaxHealth);
+                MaxHealth);*/
         }
 
         public void TakeDamage(float damage)
@@ -109,7 +109,7 @@ namespace Lrw.Script.Agent.HealthSystem
             currentHealth = Mathf.Clamp(
                 newHealth,
                 0f,
-                MaxHealth);
+                MaxHealth * 5);
 
             OnHealthChanged?.Invoke(
                 currentHealth,

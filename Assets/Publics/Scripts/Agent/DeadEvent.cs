@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using JJM.Scripts.Players.Stats;
 
 namespace Publics.Scripts.Agent
 {
@@ -10,6 +11,7 @@ namespace Publics.Scripts.Agent
         
         public void DeadEventPlay()
         {
+            PlayerStatManager.Instance.PlayerHealthModule.CurrentHealth += 5;
             GameObject p = transform.parent.parent.gameObject;
             
             transform.SetParent(null);

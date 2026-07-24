@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Lrw.Script.Agent.HealthSystem;
 
 namespace JJM.Scripts.NewEnemys
 {
@@ -14,7 +15,7 @@ namespace JJM.Scripts.NewEnemys
             transform.SetParent(null);
             particleSystem.Play();
             StartCoroutine(Bomb());
-            Destroy(owner);
+            owner.GetComponentInChildren<HealthModule>().CurrentHealth = 0;
         }
 
         private IEnumerator Bomb()
