@@ -11588,11 +11588,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Enemy.EnemySkills.GGHSkill
   statDataSo: {fileID: 11400000, guid: 1ca4d84a5ce13ef40828eeefb574b28c, type: 2}
-  <AttackDistance>k__BackingField: 0.5
-  damageCaster: {fileID: 0}
-  poolManagerSo: {fileID: 0}
-  poolItemSo: {fileID: 0}
-  bulletSpeed: 0
+  <AttackDistance>k__BackingField: 5
+  poolManagerSo: {fileID: 11400000, guid: 90caa624d4ae4fc4f9e7b4db0a276e9d, type: 2}
+  poolItemSo: {fileID: 11400000, guid: 318e5dfcd1fbc7a48942081fab4214ab, type: 2}
+  bulletSpeed: 10
 --- !u!1 &1899750588
 GameObject:
   m_ObjectHideFlags: 0
@@ -11670,6 +11669,51 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!1 &2051267326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2051267328}
+  - component: {fileID: 2051267327}
+  m_Layer: 0
+  m_Name: Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2051267327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051267326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d93f16746cf460499ae9860631b58e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PoolRuntime::DevLib.ObjectPool.Runtime.PoolInitializer
+  <PoolManager>k__BackingField: {fileID: 11400000, guid: 90caa624d4ae4fc4f9e7b4db0a276e9d, type: 2}
+--- !u!4 &2051267328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051267326}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.93115, y: 3.67687, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2135776108
 GameObject:
   m_ObjectHideFlags: 0
@@ -11886,7 +11930,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3675805557912266089, guid: 542ba380d9ca67649b956a083980df0b, type: 3}
     - {fileID: 7570680532025909161, guid: 542ba380d9ca67649b956a083980df0b, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 553497669575914005, guid: 542ba380d9ca67649b956a083980df0b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8727515150386234138, guid: 542ba380d9ca67649b956a083980df0b, type: 3}
@@ -11905,3 +11950,4 @@ SceneRoots:
   - {fileID: 3671671960808502057}
   - {fileID: 1899750589}
   - {fileID: 954655831}
+  - {fileID: 2051267328}
