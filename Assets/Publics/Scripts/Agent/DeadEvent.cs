@@ -6,6 +6,7 @@ namespace Publics.Scripts.Agent
     public class DeadEvent : MonoBehaviour
     {
         [SerializeField] private ParticleSystem particles;
+        [SerializeField] private bool destroy = true;
         
         public void DeadEventPlay()
         {
@@ -14,7 +15,8 @@ namespace Publics.Scripts.Agent
             transform.SetParent(null);
             particles.Play();
             StartCoroutine(LifetimeCoolDown());
-            Destroy(p);
+            if (destroy) Destroy(p);
+            p.gameObject.SetActive(false);
         }
 
         private IEnumerator LifetimeCoolDown()

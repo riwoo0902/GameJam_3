@@ -1,6 +1,7 @@
 ﻿using DevLib.AnimatorSystem;
 using Publics.Scripts;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace JJM.Scripts.UI
@@ -19,6 +20,8 @@ namespace JJM.Scripts.UI
         [SerializeField] private PowerUpPanel[] powerUpPanels;
 
         private Animator _animator;
+        
+        public UnityEvent events;
 
         protected override void Awake()
         {
@@ -37,6 +40,11 @@ namespace JJM.Scripts.UI
             {
                 PowerUpPlay();
             }
+        }
+
+        public void EventInvoke()
+        {
+            events?.Invoke();
         }
 
         public void PowerUpPlay()
