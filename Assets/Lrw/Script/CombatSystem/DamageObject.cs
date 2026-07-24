@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Lrw.Script.CombatSystem
 {
-    [RequireComponent(typeof(Collider))]
+    [RequireComponent(typeof(Collider2D))]
     public class DamageObject : MonoBehaviour
     {
         [SerializeField] private float damage = 10f;
-        private void OnCollisionEnter(Collision other)
+        private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.collider.TryGetComponent(out ModuleOwner moduleOwner))
             {
