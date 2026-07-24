@@ -19,12 +19,8 @@ namespace Lrw.Script.SpawnSystem
 
         public UnityEvent StageClear;
         
-        private void Awake()
-        {
-            Summon();
-        }
-
-        private void Summon()
+        [ContextMenu("Play")]
+        public void Summon()
         {
             allEnemyCount = 0;
             foreach (SummonDataSo summonData in summonDataList)

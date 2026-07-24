@@ -189,7 +189,7 @@ Transform:
   m_GameObject: {fileID: 6574427959805729779}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -244,7 +244,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 8
+  m_Speed: 5
   m_Acceleration: 500
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -290,8 +290,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.05332788}
-  m_Radius: 0.23938847
+  m_Offset: {x: 0, y: 0.015106162}
+  m_Radius: 0.39428708
 --- !u!114 &5907036550768171115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +308,9 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &5677764865707685002
 Rigidbody2D:
   serializedVersion: 5
@@ -381,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.Agent.StatSystem.StatModule
   statOverride:
   - <StatSo>k__BackingField: {fileID: 11400000, guid: d207959515f7bfc49b6647162acaacec, type: 2}
-    <BaseValue>k__BackingField: 100
+    <BaseValue>k__BackingField: 30
   - <StatSo>k__BackingField: {fileID: 11400000, guid: 1ca4d84a5ce13ef40828eeefb574b28c, type: 2}
     <BaseValue>k__BackingField: 15
   - <StatSo>k__BackingField: {fileID: 11400000, guid: dd04528f2aa1cd04d9b4159931d9b56e, type: 2}
