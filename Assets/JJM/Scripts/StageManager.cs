@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using JJM.Scripts.Player;
+using Lrw.Script.SpawnSystem;
 using Publics.Scripts;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace JJM.Scripts
 {
@@ -10,14 +13,22 @@ namespace JJM.Scripts
         public int CurrentStageNumber { get; private set; }
 
         [field: SerializeField]
-        public int CurrentMapIndex { get; private set; } = -1;
+        public UnityEvent OnStartStage;
 
         [SerializeField] private Transform maps;
 
+        
+        public int CurrentMapIndex { get; private set; } = -1;
         private readonly List<int> _remainingMapIndices = new();
 
         private int _cachedMapCount;
         private int _lastMapIndex = -1;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            StageStart();
+        }
 
         [ContextMenu("Start Test")]
         public void StageStart()
@@ -63,14 +74,18 @@ namespace JJM.Scripts
 
             _remainingMapIndices.RemoveAt(randomListIndex);
 
-            maps.GetChild(selectedMapIndex)
-                .gameObject
-                .SetActive(true);
+            var map = maps.GetChild(selectedMapIndex);
+            
+            map.gameObject.SetActive(true);
 
             CurrentMapIndex = selectedMapIndex;
             CurrentStageNumber++;
-
+            
             _lastMapIndex = selectedMapIndex;
+            
+            map.GetComponentInChildren<Summoner>().Summon();
+            OnStartStage?.Invoke();
+            PlayerManager.Instance.Player.transform.position = map.GetChild(2).position;
         }
 
         public void StageEnd()
@@ -82,6 +97,8 @@ namespace JJM.Scripts
 
             DisableAllMaps();
             CurrentMapIndex = -1;
+            
+            
         }
 
         private void DisableAllMaps()

@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteResolver
   m_CategoryHash: 1.4573832e-17
-  m_labelHash: 8.705938e-23
+  m_labelHash: 0.00000041000047
   m_SpriteKey: 0
   m_SpriteHash: 356776702
 --- !u!1001 &1944712038663665961
@@ -398,6 +398,10 @@ PrefabInstance:
     - target: {fileID: 3531387293337473223, guid: 68f6fb1265de5584faaaed362fbb7f0b, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213101609600091157, guid: 68f6fb1265de5584faaaed362fbb7f0b, type: 3}
+      propertyPath: destroy
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6533055150809415542, guid: 68f6fb1265de5584faaaed362fbb7f0b, type: 3}
       propertyPath: m_SortingLayer
