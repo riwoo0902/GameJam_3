@@ -8,7 +8,6 @@
     public static class SoundUIEvent
     {
         public static SoundValueChangeEvent SoundValueChange = new();
-        
     }
 
     public class SoundValueChangeEvent

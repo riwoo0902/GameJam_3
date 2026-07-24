@@ -14,13 +14,15 @@ namespace Publics.Scripts.Agent
             
             transform.SetParent(null);
             particles.Play();
-            StartCoroutine(LifetimeCoolDown());
-            if (destroy) Destroy(p);
-            p.gameObject.SetActive(false);
+            StartCoroutine(LifetimeCoolDown(p));
+            
         }
 
-        private IEnumerator LifetimeCoolDown()
+        private IEnumerator LifetimeCoolDown(GameObject p)
         {
+            yield return null;
+            if (destroy) Destroy(p);
+            else p.SetActive(false);
             yield return new WaitForSeconds(2f);
             Destroy(gameObject);
         }
