@@ -17,7 +17,7 @@ namespace Publics.Scripts
                     if (_instance == null)
                     {
                         GameObject singleton = new GameObject(typeof(T).Name);
-                        _instance = singleton.AddComponent<T>();
+                        //_instance = singleton.AddComponent<T>();
                     }
                 }
                 

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f61c1a0d4e44ac1be7cdd2389d5879d, type: 3}
+  m_Name: Enemy_Projective
+  m_EditorClassIdentifier: PoolRuntime::DevLib.ObjectPool.Runtime.PoolItemSO
+  poolingName: Enemy_Projective
+  prefab: {fileID: 870300620441358932, guid: 44ed026c7d8d4ed4099ef727effc0ad3, type: 3}
+  initCount: 100

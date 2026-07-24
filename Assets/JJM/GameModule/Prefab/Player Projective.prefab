@@ -141,6 +141,9 @@ MonoBehaviour:
   <Damage>k__BackingField: 3
   poolManager: {fileID: 11400000, guid: 90caa624d4ae4fc4f9e7b4db0a276e9d, type: 2}
   lifeTime: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   <PoolItem>k__BackingField: {fileID: 11400000, guid: fc6dc9dc518660b41952b7a220f2e516, type: 2}
 --- !u!58 &7508911423078193331
 CircleCollider2D:
@@ -172,7 +175,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
