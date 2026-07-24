@@ -14,8 +14,7 @@ namespace Lrw.Script.SpawnSystem
         [field:SerializeField] public float StartDelay { get; private set; } = 0;
         
         [Header("Loop")]
-        [field: SerializeField] public bool Loop { get; private set; } = false;
+        [field: SerializeField] public int LoopCount { get; private set; } = 0;
         [field: SerializeField] public int LoopDelay { get; private set; } = 0;
-        
     }
 }
