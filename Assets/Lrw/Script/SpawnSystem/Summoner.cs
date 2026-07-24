@@ -30,7 +30,7 @@ namespace Lrw.Script.SpawnSystem
             foreach (SummonDataSo summonData in summonDataList)
             {
                 StartCoroutine(SummonCoroutine(summonData));
-                allEnemyCount += summonData.Count * (summonData.LoopCount + 1);
+                allEnemyCount += summonData.Count * summonData.LoopCount;
             }
         }
 
@@ -38,19 +38,13 @@ namespace Lrw.Script.SpawnSystem
         {
             yield return new WaitForSeconds(summonData.StartDelay);
             
-            for (int i = 0; i < summonData.Count; i++)
-            {
-                CreateGameObject(summonData);
-            }
-            if(summonData.LoopCount <= 0)  yield break;
-            
             for (int loop = 0; loop < summonData.LoopCount; loop++)
             {
-                yield return new WaitForSeconds(summonData.LoopDelay);
                 for (int i = 0; i < summonData.Count; i++)
                 {
                     CreateGameObject(summonData);
                 }
+                yield return new WaitForSeconds(summonData.LoopDelay);
             }
         }
 
