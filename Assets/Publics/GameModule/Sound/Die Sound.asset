@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc94fea810364f85bdb10c26f80c976f, type: 3}
-  m_Name: Sound clip
+  m_Name: Die Sound
   m_EditorClassIdentifier: SoundSystem_Runtime_assembly::DevLib.SoundSystem.Runtime.SoundClipSO
   audioType: 0
-  clip: {fileID: 8300000, guid: 4b18c0b833625e14ba47038fe967baf8, type: 3}
+  clip: {fileID: 8300000, guid: 18622be203ed4bd4eae5e1ecf38c6914, type: 3}
   loop: 0
   randomizePitch: 0
   randomPitchModifier: 0.1
   volume: 1
   pitch: 1
-  startTime: 0.15
-  endTime: 1
+  startTime: 0.1
+  endTime: 2
