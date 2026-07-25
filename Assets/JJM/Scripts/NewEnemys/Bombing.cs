@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Lrw.Script.Agent.HealthSystem;
+using UnityEngine.Events;
 
 namespace JJM.Scripts.NewEnemys
 {
@@ -9,9 +10,12 @@ namespace JJM.Scripts.NewEnemys
         [SerializeField] private ParticleSystem particleSystem;
         [SerializeField] private GameObject caster;
         [SerializeField] private GameObject owner;
+
+        public UnityEvent events;
         
         public void Explosion()
         {
+            events?.Invoke();
             transform.SetParent(null);
             particleSystem.Play();
             StartCoroutine(Bomb());

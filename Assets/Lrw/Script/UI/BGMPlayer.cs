@@ -8,8 +8,9 @@ namespace Lrw.Script.UI
     {
         [SerializeField] private SoundClipSO soundClip;
         
-        public void Awake()
+        public void Start()
         {
+            EventBus<StopSoundEvent>.Invoke(SoundEvents.StopSound.Init(1));
             EventBus<PlaySoundEvents>.Invoke(SoundEvents.PlaySound.Init(transform.position, soundClip,1));
         }
     }

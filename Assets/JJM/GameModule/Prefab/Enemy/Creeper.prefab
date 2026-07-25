@@ -281,6 +281,22 @@ MonoBehaviour:
   particleSystem: {fileID: 3993614798299315138}
   caster: {fileID: 8528281137306971680}
   owner: {fileID: 5446361529788343573}
+  events:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2340758151318647673}
+        m_TargetAssemblyTypeName: JJM.Scripts.Sound.SoundPlayEvent, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: e9b195ef30fefd14ab86cd1614bdcb06, type: 2}
+          m_ObjectArgumentAssemblyTypeName: DevLib.SoundSystem.Runtime.SoundClipSO,
+            SoundSystem_Runtime_assembly
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6375743635434169874
 GameObject:
   m_ObjectHideFlags: 0
@@ -5519,6 +5535,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68f6fb1265de5584faaaed362fbb7f0b, type: 3}
+--- !u!114 &2340758151318647673 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7286201824085791715, guid: 68f6fb1265de5584faaaed362fbb7f0b, type: 3}
+  m_PrefabInstance: {fileID: 4999491292114018458}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd19513ee4354539b125e48d4219ab3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JJM.Scripts.Sound.SoundPlayEvent
 --- !u!4 &2435415606043343625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7254620877553834899, guid: 68f6fb1265de5584faaaed362fbb7f0b, type: 3}
