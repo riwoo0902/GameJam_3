@@ -34,7 +34,7 @@ namespace DevLib.SoundSystem.Runtime
 
             if (clipData.randomizePitch)
             {
-                _audioSource.pitch = Random.Range(-clipData.randomPitchModifier,clipData.randomPitchModifier);
+                _audioSource.pitch += Random.Range(-clipData.randomPitchModifier,clipData.randomPitchModifier);
             }
             
             _audioSource.clip = clipData.clip;
