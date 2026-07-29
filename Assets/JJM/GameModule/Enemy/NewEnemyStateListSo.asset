@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1f66be380504f54ab3cd825dfeaf9dc, type: 3}
+  m_Name: NewEnemyStateListSo
+  m_EditorClassIdentifier: Assembly-CSharp::Agents.FSM.StateListSO
+  generatePath: C:/Users/ASUS/GameJam_3/Assets/JJM/Scripts/NewEnemys/FSM
+  enumName: EnemyStateEnum
+  states:
+  - {fileID: 11400000, guid: b78c6878c9a5d774ab45324a05f7a541, type: 2}
+  - {fileID: 11400000, guid: 4a788d34f4f7fce46b9bb5785ae6bed2, type: 2}

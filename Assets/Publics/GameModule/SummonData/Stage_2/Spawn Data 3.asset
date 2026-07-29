@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc1a73c211c42a3b8ec3a1dd07ae79f, type: 3}
+  m_Name: Spawn Data 3
+  m_EditorClassIdentifier: Assembly-CSharp::Lrw.Script.SpawnSystem.SummonDataSo
+  <Pos>k__BackingField:
+    position: {x: 13, y: 10, z: 0}
+  <Prefab>k__BackingField: {fileID: 5368902495229015127, guid: 70a3619731b76144b87d86f680e7ab81, type: 3}
+  <Count>k__BackingField: 1
+  <RandomRange>k__BackingField: 0
+  <StartDelay>k__BackingField: 1
+  <LoopCount>k__BackingField: 3
+  <LoopDelay>k__BackingField: 4
